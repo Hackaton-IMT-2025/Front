@@ -42,3 +42,8 @@ table {
    border-spacing: 0;
 }
 
+body{
+   background: #210097b6;
+   align-items: center;
+   text-align: center;
+}

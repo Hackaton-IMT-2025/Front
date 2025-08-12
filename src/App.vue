@@ -12,22 +12,22 @@
       <ul>
         <li>
           <p>
-            vagas
+            <a href="#">vagas</a>
           </p>
         </li>
         <li>
-          Empresas
+          <a href="#">Empresas</a>
         </li>
         <li>
           <button>
-            <p>
-              Login
+            <p class="login">
+              <a href="#">Login</a>
             </p>
           </button>
         </li>
       </ul>
     </header>
-    <section>
+    <section class="introducao">
       <p>
         Oi, somos o projeto IMT, um site com o proposito de apoiar ao egressados na sua procura no ambito laboral e
         empresas na busqueda de trabalhadores de qualidade, se tua empresa está procurando vacantes ou voce é um
@@ -47,7 +47,6 @@
       <button>
         Formado
       </button>
-      <img src="../public/imagens/image 11(2).png" alt="image 11.png">
     </section>
     <section>
       <ul>
@@ -137,5 +136,37 @@
 
 
 <style scoped>
+
+header{
+  display: flex;
+  justify-content: space-between;
+  margin:30px 110px 30px 100px;
+  
+}header ul{
+  display: flex;
+  align-items: center;
+
+}header ul li{
+  padding: 0px 20px ;
+  
+}header ul li a{
+ text-decoration: none;
+ color: #fff;
+ font-size: 20px;
+}header ul li p.login a{
+  color: black;
+  padding: 10px;
+  border-radius: 80%;
+}
+/*=====================================
+               introdução
+======================================*/
+section.introducao p{
+  align-self: center;
+  text-align: center;
+  padding: 20px 500px;
+  font-size: 17px;
+}
+
 
 </style>
