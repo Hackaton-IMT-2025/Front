@@ -33,13 +33,12 @@
         empresas na busqueda de trabalhadores de qualidade, se tua empresa está procurando vacantes ou voce é um
         egressado que comecou no mundo do trabalho, faça o login e os ajudaremos na sua procura.
       </p>
+      <div>
       <p>
         Voce é:
       </p>
       <button>
-        <p>
           Empresa
-        </p>
       </button>
       <p>
         Ou
@@ -47,6 +46,7 @@
       <button>
         Formado
       </button>
+      </div>
     </section>
     <section>
       <ul>
@@ -166,6 +166,9 @@ section.introducao p{
   text-align: center;
   padding: 20px 500px;
   font-size: 17px;
+}section.introducao div{
+   display: flex;
+   align-items: center;
 }
 
 
