@@ -12,8 +12,8 @@
       <section class="hero">
         <!-- Menu -->
         <div class="nav">
-          <a href="#">Vagas</a>
-          <a href="#">Empresas</a>
+          <a href="#" class="text-white font-semibold drop-shadow">Vagas</a>
+          <a href="#" class="text-white font-semibold drop-shadow">Empresas</a>
           <button>Login</button>
         </div>
 
@@ -40,22 +40,20 @@
           MUNDO DO TRABALHO
         </h1>
 
-        <!-- Seta -->
-        <div class="scroll-down">ROLE A PÁGINA</div>
       </section>
     </main>
 
     <div class="degrade-bottom"></div>
   </div>
 </template>
- 
+
 
 <style scoped>
 /*==============================================
-                  background                    
+                  background
 ===============================================*/
 .background {
-  background: #05030b;
+  background:rgba(8, 8, 30, 1);
   display: flex;
   height: 100vh;
   width: 100%;
@@ -73,6 +71,7 @@
 .degrade-top {
   top: 0;
   background: linear-gradient(to bottom, #08081E, rgba(8, 8, 30, 0));
+  z-index: 1;
 }
 
 .degrade-bottom {
@@ -82,14 +81,14 @@
 
 .lado-esquerdo {
   width: 50%;
-  background: conic-gradient(from 90deg at 50% 80%, #0c0c0c 0deg, #B1B1B1 110deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 70%, #0c0c0c 0deg, #B1B1B1 110deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
 }
 
 .lado-direito {
   width: 50%;
-  background: conic-gradient(from 90deg at 50% 80%, #0c0c0c 0deg, #B1B1B1 110deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 70%, #0c0c0c 0deg, #B1B1B1 110deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
   transform: scaleX(-1);
@@ -104,17 +103,30 @@
 }.hero{
   align-items: center;
   text-align:center ;
-}.nav{
-margin: 50px 0px 0px 60vw;
-align-content: start;
+}
 
-}a{
- color: white;
+.nav{
+  position: relative;
+  z-index: 100;
+  margin: 50px 0px 0px 60vw;
+  align-content: start;
+
+}
+
+.nav a {
+    z-index: 100;
+    color: white;
+}
+
+a{
+
  font-size: 20px;
  text-decoration: none;
  padding: 0px 40px;
- color-interpolation-filters: sRGB;
- 
+ /* color: #ffffff !important; força o branco */
+a:hover {
+    color: #ccccff; /* cor mais clara ao passar o mouse */
+}
 }p{
   color: #f8f8f8;
   margin: 40px 32vw 0px 32vw;
@@ -130,7 +142,7 @@ align-content: start;
   font-size: 6vw;
   color: #b1b1b1;
   mix-blend-mode: color-dodge;
-  margin: 10px;
+  margin: 100px 0px 0px 0px;
 
 }.voce{
   margin: 10px;
