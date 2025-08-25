@@ -107,10 +107,14 @@ function irParaLogin() {
     </section>
   </div>
   <section v-if="paginaAtual === 'login'" id="loginFormadoSection">
-  
-</section>
-
-
+    <h1>Voce é?</h1>
+    <button>
+      Formado
+    </button>
+    <button>
+      Empresa
+    </button>
+  </section>
   </main>
   <footer>
     <img src="../public/imagens/Captura de tela de 2025-07-04 13-40-50-Photoroom 1.png"
