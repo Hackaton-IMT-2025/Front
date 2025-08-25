@@ -1,4 +1,8 @@
+
+<script setup>
+=======
 <<script setup>
+
 import { ref } from 'vue';
 
 const paginaAtual = ref("home"); 
@@ -107,6 +111,16 @@ function irParaLogin() {
     </section>
   </div>
   <section v-if="paginaAtual === 'login'" id="loginFormadoSection">
+
+    <h1>Voce é?</h1>
+    <button>
+      Formado
+    </button>
+    <button>
+      Empresa
+    </button>
+  </section>
+=======
   
 </section>
 
