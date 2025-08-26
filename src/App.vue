@@ -1,7 +1,4 @@
-
 <script setup>
-=======
-<<script setup>
 
 import { ref } from 'vue';
 
@@ -9,6 +6,18 @@ const paginaAtual = ref("home");
 
 function irParaLogin() {
   paginaAtual.value = "login";
+}
+function irParaCriarEmpresas() {
+  paginaAtual.value = "criarEmpresas";
+}
+function irParaCriarFormado() {
+  paginaAtual.value = "criarFormado";
+}
+function irParaLoginFormado() {
+  paginaAtual.value = "LoginFormado";
+}
+function irParaLoginEmpresa() {
+  paginaAtual.value = "LoginEmpresa";
 }
 </script>
 
@@ -31,17 +40,13 @@ function irParaLogin() {
           <a href="">Empresas</a>
         </li>
         <li>
-          <button>
-            <p>
-              <a href="">Login</a>
-            </p>
-          </button>
+        <button @click="irParaLogin">
+        login
+        </button>
         </li>
       </ul>
     </header>
     <div v-if="paginaAtual === 'home'">
-
-
     <section>
       <p>
         Oi, somos o projeto IMT, um site com o proposito de apoiar ao egressados na sua procura no ambito laboral e
@@ -51,15 +56,13 @@ function irParaLogin() {
       <p>
         Voce é:
       </p>
-      <button>
-        <p>
+      <button @click="irParaCriarEmpresas">
           Empresa
-        </p>
       </button>
       <p>
         Ou
       </p>
-      <button @click="irParaLogin">
+      <button @click="irParaCriarFormado">
       Formado
       </button>
       <img src="../public/imagens/image 11(2).png" alt="image 11.png">
@@ -113,18 +116,132 @@ function irParaLogin() {
   <section v-if="paginaAtual === 'login'" id="loginFormadoSection">
 
     <h1>Voce é?</h1>
-    <button>
+    <button @click="irParaLoginFormado">
       Formado
     </button>
-    <button>
+    <button @click="irParaLoginEmpresa">
       Empresa
     </button>
   </section>
-=======
-  
+  <section>
+
+  </section>
+<section v-if="paginaAtual === 'criarEmpresas'" id="criarEmpresasSection">
+  <h1>Cria sua empresa</h1>
+  <ul>
+    <li>
+      <div>
+      <input type="text" placeholder="nome da empresa">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="email">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="Endereço">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="CNPJ">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="Confirmação da senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  <button>
+Cadastrar
+  </button>
 </section>
-
-
+<section v-if="paginaAtual === 'criarFormado'" id="criarFormadoSection">
+<h1>Cria sua conta de formado</h1>
+<ul>
+    <li>
+      <div>
+      <input type="text" placeholder="nome da empresa">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="email">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="Confirmação da senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  <button>
+Cadastrar
+  </button>
+</section>
+<section v-if="paginaAtual === 'LoginFormado'" id="LoginFormadoSection">
+  <img src="../public/imagens/flame.png" alt="flame.png">
+  <ul>
+    <li>
+      <div>
+      <input type="text" placeholder="email">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  <button>
+    login
+  </button>
+</section>
+<section v-if="paginaAtual === 'LoginEmpresa'" id="LoginEmpresasSection">
+  <img src="../public/imagens/flame.png" alt="flame.png">  
+  <ul>
+    <li>
+      <div>
+      <input type="text" placeholder="CNPJ">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  <button>
+    login
+  </button>
+</section>
   </main>
   <footer>
     <img src="../public/imagens/Captura de tela de 2025-07-04 13-40-50-Photoroom 1.png"
@@ -136,9 +253,9 @@ function irParaLogin() {
         </p>
       </li>
       <li>
-        <p>
-          <a href="">login</a>
-        </p>
+        <button @click="irParaLogin">
+        login
+        </button>
       </li>
       <li>
         <p>
