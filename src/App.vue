@@ -13,16 +13,10 @@ function irParaLogin() {
   <!--fundo do site-->
   <div class="background">
     <div class="degrade-top"></div>
-
     <div class="lado-esquerdo"></div>
     <div class="lado-direito"></div>
     <main class="mainpage">
       <section class="hero">
-
-
-
-
-<template>
   <main>
     <header>
       <nav>
@@ -40,17 +34,13 @@ function irParaLogin() {
         </li>
         <li>
           <button>
-            <p>
               <a href="">Login</a>
-            </p>
           </button>
         </li>
       </ul>
     </header>
     <div v-if="paginaAtual === 'home'">
-
-
-    <section>
+    <section class="somosimt">
       <p>
         Oi, somos o projeto IMT, um site com o proposito de apoiar ao egressados na sua procura no ambito laboral e
         empresas na busqueda de trabalhadores de qualidade, se tua empresa está procurando vacantes ou voce é um
@@ -59,40 +49,19 @@ function irParaLogin() {
       <p>
         Voce é:
       </p>
+      <div class="escolha">
       <button>
-        <p>
           Empresa
-        </p>
       </button>
-      <p>
+      <p class="ou">
         Ou
       </p>
       <button @click="irParaLogin">
       Formado
       </button>
-      <img src="../public/imagens/image 11(2).png" alt="image 11.png">
-    </section>
-    <section>
-      <ul>
-        <li>
-          <img src="../public/imagens/image 1(2).png" alt="image 1(1).png">
-          <p>
-            Nossas estadisticas tem um avanço do 90%
-          </p>
-        </li>
-        <li>
-          <img src="../public/imagens/image 2(1).png" alt="image 2.png">
-          <p>
-            O 89% dos nossos graduados recebem propostas de trabalho cada semana
-          </p>
-        </li>
-        <li>
-          <img src="../public/imagens/image 3(1).png" alt="image 3.png">
-          <p>
-            O 94% das nossas empresas amigas se sentem satisfeitas com nossos graduados
-          </p>
-        </li>
-      </ul>
+      </div>
+      <h1>indrodução ao mundo do trabalho</h1>
+      
     </section>
     <section>
       <p>
@@ -101,7 +70,6 @@ function irParaLogin() {
         sua privacidade seja sempre respeitada. Confie em nós para proporcionar uma experiência online segura e
         tranquila. Aqui, seu bem-estar digital é o nosso compromisso!
       </p>
-      <img src="../public/imagens/image 4(1).png" alt="image 4.png">
     </section>
     <section>
       <p>
@@ -176,7 +144,7 @@ function irParaLogin() {
                   background
 ===============================================*/
 .background {
-  background:rgba(8, 8, 30, 1);
+  background:rgb(5, 5, 19);
   display: flex;
   height: 100vh;
   width: 100%;
@@ -190,31 +158,53 @@ function irParaLogin() {
   z-index: 5;
   pointer-events: none;
 }
-
 .degrade-top {
   top: 0;
-  background: linear-gradient(to bottom, #08081E, rgba(8, 8, 30, 0));
+  background: linear-gradient(to bottom, #0d0d36, rgba(8, 8, 30, 0));
   z-index: 1;
 }
 
 .degrade-bottom {
   bottom: 0;
-  background: linear-gradient(to top, #08081E, rgba(8, 8, 30, 0));
+  background: linear-gradient(to top, #0d0d36, rgba(8, 8, 30, 0));
 }
 
 .lado-esquerdo {
   width: 50%;
-  background: conic-gradient(from 90deg at 50% 70%, #0c0c0c 0deg, #B1B1B1 110deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 70%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
 }
 
 .lado-direito {
   width: 50%;
-  background: conic-gradient(from 90deg at 50% 70%, #0c0c0c 0deg, #B1B1B1 110deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 70%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
   transform: scaleX(-1);
+}
+/*============================================================
+                            header                            
+============================================================*/
+header{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 150px 0px 150px;
+}header ul{
+  display: flex;
+  margin: 20px ;
+  align-items: center;
+}header ul li{
+  text-decoration: none;
+}header ul li p{
+  margin: 10px 50px;
+}header ul li a{
+  text-decoration: none;
+  color: aliceblue;
+} header ul li button a{
+  color: #0c0c0c;
 }
 /*======================================
                 mainpage
@@ -226,48 +216,34 @@ function irParaLogin() {
 }.hero{
   align-items: center;
   text-align:center ;
+}.escolha{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}.ou{
+  margin: 5px;
+}.somosimt{
+  justify-content: center;
+  align-items: center;
 }
-
-.nav{
-  position: relative;
-  z-index: 100;
-  margin: 50px 0px 0px 60vw;
-  align-content: start;
-
-}
-
-.nav a {
-    z-index: 100;
-    color: white;
-}
-
-a{
-
- font-size: 20px;
- text-decoration: none;
- padding: 0px 40px;
- /* color: #ffffff !important; força o branco */
-a:hover {
-    color: #ccccff; /* cor mais clara ao passar o mouse */
-}
-}p{
+p{
   color: #f8f8f8;
-  margin: 40px 32vw 0px 32vw;
+  margin: 30px 32vw 0px 32vw;
   line-height: 23px;
 }button{
   padding: 10px 20px;
   border-radius: 20px;
   border-style: none;
-  margin: 0px 0px 0px 25px;
+  margin: 20px 50px 20px 50px;
 }.botoes-opcao button{
   margin: 10px 60px;
 }h1{
   font-size: 6vw;
   color: #b1b1b1;
   mix-blend-mode: color-dodge;
-  margin: 100px 0px 0px 0px;
+  margin: 10px 0px 500px 0px;
 
 }.voce{
-  margin: 10px;
+  margin: 0;
 }
 </style>
