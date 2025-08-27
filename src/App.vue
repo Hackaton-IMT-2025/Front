@@ -63,15 +63,14 @@ function irParaLogin() {
       <h1>indrodução ao mundo do trabalho</h1>
       
     </section>
-    <section>
+    <section class="sobresite">
       <p>
         No nosso site, a segurança dos seus dados pessoais é nossa prioridade. Utilizamos tecnologia de ponta para
         proteger suas informações contra acessos não autorizados. Cada passo é cuidadosamente monitorado, garantindo que
         sua privacidade seja sempre respeitada. Confie em nós para proporcionar uma experiência online segura e
         tranquila. Aqui, seu bem-estar digital é o nosso compromisso!
       </p>
-    </section>
-    <section>
+    <div>
       <p>
         Conectar-se com pessoas que podem ajudar é vital no ambiente laboral. Cada relacionamento é uma oportunidade de
         aprendizado e crescimento. Ao cultivar redes, você não só expande seu conhecimento, mas também encontra apoio e
@@ -84,6 +83,7 @@ function irParaLogin() {
         para conquistar um posto de destaque no mercado de trabalho.
       </p>
       <img src="../public/imagens/image 6(1).png" alt="image 6.png">
+      </div>
     </section>
   </div>
   <section v-if="paginaAtual === 'login'" id="loginFormadoSection">
@@ -171,14 +171,14 @@ function irParaLogin() {
 
 .lado-esquerdo {
   width: 50%;
-  background: conic-gradient(from 90deg at 50% 70%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 80%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
 }
 
 .lado-direito {
   width: 50%;
-  background: conic-gradient(from 90deg at 50% 70%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 80%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
   transform: scaleX(-1);
@@ -213,6 +213,7 @@ header{
   position: absolute;
   align-content: center;
   align-items: center;
+  /*-----hero------*/
 }.hero{
   align-items: center;
   text-align:center ;
@@ -241,9 +242,15 @@ p{
   font-size: 6vw;
   color: #b1b1b1;
   mix-blend-mode: color-dodge;
-  margin: 10px 0px 500px 0px;
+  margin: 10px 0px 300px 0px;
 
 }.voce{
   margin: 0;
+}
+/*-------sobre o site---------*/
+.sobresite{
+  
+}.sobresite p{
+  color: #0c0c0c;
 }
 </style>
