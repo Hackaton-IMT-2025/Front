@@ -1,46 +1,67 @@
 <script setup>
 import { ref } from 'vue';
-
-const paginaAtual = ref("home");
+const paginaAtual = ref("home"); 
 
 function irParaLogin() {
   paginaAtual.value = "login";
 }
+function irParaCriarEmpresas() {
+  paginaAtual.value = "criarEmpresas";
+}
+function irParaCriarFormado() {
+  paginaAtual.value = "criarFormado";
+}
+function irParaLoginFormado() {
+  paginaAtual.value = "LoginFormado";
+}
+function irParaLoginEmpresa() {
+  paginaAtual.value = "LoginEmpresa";
+}
+function irParaHome() {
+  paginaAtual.value = "Home";
+}
+function irParaUsuario() {
+  paginaAtual.value = "Usuario";
+}
+function irParaUsuario2() {
+  paginaAtual.value = "Usuario2";
+}
+function irParaBusca() {
+  paginaAtual.value = "Busca";
+}
+function irParaHabilidadesNecessarias() {
+  paginaAtual.value = "HabilidadesNecessarias";
+}
 </script>
 
-
 <template>
-  <!--fundo do site-->
   <div class="background">
     <div class="degrade-top"></div>
     <div class="lado-esquerdo"></div>
     <div class="lado-direito"></div>
     <main class="mainpage">
-      <section class="hero">
-  <main>
     <header>
-      <nav>
-        <img src="../public/imagens/Captura de tela de 2025-07-04 13-40-50-Photoroom 1.png "
-          alt="tela de 2025-07-04 13-40-50-Photoroom.png">
-      </nav>
-      <ul>
-        <li>
-          <p>
-            <a href="">vagas</a>
-          </p>
-        </li>
-        <li>
-          <a href="">Empresas</a>
-        </li>
-        <li>
-          <button>
-              <a href="">Login</a>
-          </button>
-        </li>
-      </ul>
-    </header>
+  <ul>
+    <li><a href=""><p>Vagas</p></a></li>
+    <li><a href=""><p>Empresas</p></a></li>
+    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)">
+      <button @click="irParaLogin">Login</button>
+    </li>
+    <li v-else>
+      <img src="../public/imagens/flame.png" alt="flame.png">
+    </li>
+  </ul>
+  <div 
+    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)"
+  >
+    <input type="text" placeholder="Buscar..." />
+    <button>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+</header>
     <div v-if="paginaAtual === 'home'">
-    <section class="somosimt">
+    <section class="hero">
       <p>
         Oi, somos o projeto IMT, um site com o proposito de apoiar ao egressados na sua procura no ambito laboral e
         empresas na busqueda de trabalhadores de qualidade, se tua empresa está procurando vacantes ou voce é um
@@ -50,27 +71,46 @@ function irParaLogin() {
         Voce é:
       </p>
       <div class="escolha">
-      <button>
+      <button @click="irParaCriarEmpresas">
           Empresa
       </button>
-      <p class="ou">
+      <p>
         Ou
       </p>
-      <button @click="irParaLogin">
+      <button @click="irParaCriarFormado">
       Formado
       </button>
       </div>
-      <h1>indrodução ao mundo do trabalho</h1>
-      
+      <h1>INTRODUÇÃO AO MUNDO DO TRABALHO</h1>
     </section>
-    <section class="sobresite">
+    <section>
+      <ul>
+        <li>
+          <p>
+            Nossas estadisticas tem um avanço do 90%
+          </p>
+        </li>
+        <li>
+          <p>
+            O 89% dos nossos graduados recebem propostas de trabalho cada semana
+          </p>
+        </li>
+        <li>
+          <p>
+            O 94% das nossas empresas amigas se sentem satisfeitas com nossos graduados
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section>
       <p>
         No nosso site, a segurança dos seus dados pessoais é nossa prioridade. Utilizamos tecnologia de ponta para
         proteger suas informações contra acessos não autorizados. Cada passo é cuidadosamente monitorado, garantindo que
         sua privacidade seja sempre respeitada. Confie em nós para proporcionar uma experiência online segura e
         tranquila. Aqui, seu bem-estar digital é o nosso compromisso!
       </p>
-    <div>
+    </section>
+    <section>
       <p>
         Conectar-se com pessoas que podem ajudar é vital no ambiente laboral. Cada relacionamento é uma oportunidade de
         aprendizado e crescimento. Ao cultivar redes, você não só expande seu conhecimento, mas também encontra apoio e
@@ -83,15 +123,149 @@ function irParaLogin() {
         para conquistar um posto de destaque no mercado de trabalho.
       </p>
       <img src="../public/imagens/image 6(1).png" alt="image 6.png">
-      </div>
     </section>
   </div>
   <section v-if="paginaAtual === 'login'" id="loginFormadoSection">
 
+    <h1>Voce é?</h1>
+    <button @click="irParaLoginFormado">
+      Formado
+    </button>
+    <button @click="irParaLoginEmpresa">
+      Empresa
+    </button>
+  </section>
+  <section>
+
+  </section>
+<section v-if="paginaAtual === 'criarEmpresas'" id="criarEmpresasSection">
+  <h1>Cria sua empresa</h1>
+<div>
+  <ul>
+    <li>
+      <div>
+      <input type="text" placeholder="nome da empresa">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="email">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  </div>
+  <div>
+  <ul>
+    <li>
+      <div>
+      <input type="text" placeholder="Endereço">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="CNPJ">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="Confirmação da senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+</div>
+  <button>
+Cadastrar
+  </button>
 </section>
+<section v-if="paginaAtual === 'criarFormado'" id="criarFormadoSection">
+<h1>Cria sua conta de formado</h1>
+<ul>
+    <li>
+      <div>
+      <input type="text" placeholder="nome da empresa">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="email">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="Confirmação da senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  <button>
+Cadastrar
+  </button>
+</section>
+<section v-if="paginaAtual === 'LoginFormado'" id="LoginFormadoSection">
+  <img src="../public/imagens/flame.png" alt="flame.png">
+  <ul>
+    <li>
+      <div>
+      <input type="text" placeholder="email">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  <button @click="irParaHome">
+    login
+  </button>
+</section>
+<section v-if="paginaAtual === 'LoginEmpresa'" id="LoginEmpresasSection">
+  <img src="../public/imagens/flame.png" alt="flame.png">  
+  <ul>
+    <li>
+      <div>
+      <input type="text" placeholder="CNPJ">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  <button @click="irParaHome">
+    login
+  </button>
+</section>
+<section v-if="paginaAtual === 'Home'" id="">
 
-
+</section>
   </main>
+  <div class="degrade-bottom"></div>
+  </div>
   <footer>
     <img src="../public/imagens/Captura de tela de 2025-07-04 13-40-50-Photoroom 1.png"
       alt="Captura de tela de 2025-07-04 13-40-50-Photoroom.png">
@@ -102,9 +276,9 @@ function irParaLogin() {
         </p>
       </li>
       <li>
-        <p>
-          <a href="">login</a>
-        </p>
+        <button @click="irParaLogin">
+        login
+        </button>
       </li>
       <li>
         <p>
@@ -120,7 +294,7 @@ function irParaLogin() {
     <ul>
       <li>
         <a href="https://x.com/IMT184516329585"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
-
+        
       </li>
       <li>
         <a href="https://www.facebook.com/profile.php?id=61579092402663"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg></a>
@@ -131,14 +305,7 @@ function irParaLogin() {
     </ul>
     <p>&copy;2025 Copyright</p>
   </footer>
-      </section>
-    </main>
-
-    <div class="degrade-bottom"></div>
-  </div>
 </template>
-
-
 <style scoped>
 /*==============================================
                   background
@@ -194,7 +361,7 @@ header{
   margin: 40px 150px 0px 150px;
 }header ul{
   display: flex;
-  margin: 20px ;
+  margin: 20px 0px 0px 700px ;
   align-items: center;
 }header ul li{
   text-decoration: none;
@@ -221,6 +388,8 @@ header{
   display: flex;
   align-items: center;
   justify-content: center;
+}.escolha p{
+margin: 0px;
 }.ou{
   margin: 5px;
 }.somosimt{
@@ -239,7 +408,7 @@ p{
 }.botoes-opcao button{
   margin: 10px 60px;
 }h1{
-  font-size: 6vw;
+  font-size: 5vw;
   color: #b1b1b1;
   mix-blend-mode: color-dodge;
   margin: 10px 0px 300px 0px;
@@ -247,10 +416,16 @@ p{
 }.voce{
   margin: 0;
 }
-/*-------sobre o site---------*/
-.sobresite{
-  
-}.sobresite p{
-  color: #0c0c0c;
+/*=================================
+                footer             
+=================================*/
+footer{
+  width: 100%;
+}
+footer ul li a{
+       width: 10%;
 }
 </style>
+
+
+
