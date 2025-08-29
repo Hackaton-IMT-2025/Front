@@ -1,7 +1,5 @@
 <script setup>
-
 import { ref } from 'vue';
-
 const paginaAtual = ref("home"); 
 
 function irParaLogin() {
@@ -19,32 +17,47 @@ function irParaLoginFormado() {
 function irParaLoginEmpresa() {
   paginaAtual.value = "LoginEmpresa";
 }
+function irParaHome() {
+  paginaAtual.value = "Home";
+}
+function irParaUsuario() {
+  paginaAtual.value = "Usuario";
+}
+function irParaUsuario2() {
+  paginaAtual.value = "Usuario2";
+}
+function irParaBusca() {
+  paginaAtual.value = "Busca";
+}
+function irParaHabilidadesNecessarias() {
+  paginaAtual.value = "HabilidadesNecessarias";
+}
 </script>
-
-
 
 <template>
   <main>
     <header>
-      <nav>
-        <img src="../public/imagens/Captura de tela de 2025-07-04 13-40-50-Photoroom 1.png "
-          alt="tela de 2025-07-04 13-40-50-Photoroom.png">
-      </nav>
-      <ul>
-        <li>
-          <p>
-            <a href="">vagas</a>
-          </p>
-        </li>
-        <li>
-          <a href="">Empresas</a>
-        </li>
-        <li>
-        <button @click="irParaLogin">
-        login
-        </button>
-        </li>
-      </ul>
+<header>
+  <ul>
+    <li><a href="">Vagas</a></li>
+    <li><a href="">Empresas</a></li>
+    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)">
+      <button @click="irParaLogin">Login</button>
+    </li>
+    <li v-else>
+      <img src="../public/imagens/flame.png" alt="flame.png">
+    </li>
+  </ul>
+  <div 
+    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)"
+  >
+    <input type="text" placeholder="Buscar..." />
+    <button>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+</header>
+
     </header>
     <div v-if="paginaAtual === 'home'">
     <section>
@@ -65,24 +78,20 @@ function irParaLoginEmpresa() {
       <button @click="irParaCriarFormado">
       Formado
       </button>
-      <img src="../public/imagens/image 11(2).png" alt="image 11.png">
     </section>
     <section>
       <ul>
         <li>
-          <img src="../public/imagens/image 1(2).png" alt="image 1(1).png">
           <p>
             Nossas estadisticas tem um avanço do 90%
           </p>
         </li>
         <li>
-          <img src="../public/imagens/image 2(1).png" alt="image 2.png">
           <p>
             O 89% dos nossos graduados recebem propostas de trabalho cada semana
           </p>
         </li>
         <li>
-          <img src="../public/imagens/image 3(1).png" alt="image 3.png">
           <p>
             O 94% das nossas empresas amigas se sentem satisfeitas com nossos graduados
           </p>
@@ -96,7 +105,6 @@ function irParaLoginEmpresa() {
         sua privacidade seja sempre respeitada. Confie em nós para proporcionar uma experiência online segura e
         tranquila. Aqui, seu bem-estar digital é o nosso compromisso!
       </p>
-      <img src="../public/imagens/image 4(1).png" alt="image 4.png">
     </section>
     <section>
       <p>
@@ -128,6 +136,7 @@ function irParaLoginEmpresa() {
   </section>
 <section v-if="paginaAtual === 'criarEmpresas'" id="criarEmpresasSection">
   <h1>Cria sua empresa</h1>
+<div>
   <ul>
     <li>
       <div>
@@ -147,6 +156,10 @@ function irParaLoginEmpresa() {
       <i class="fa-solid fa-magnifying-glass"></i>
     </div>
     </li>
+  </ul>
+  </div>
+  <div>
+  <ul>
     <li>
       <div>
       <input type="text" placeholder="Endereço">
@@ -166,6 +179,7 @@ function irParaLoginEmpresa() {
     </div>
     </li>
   </ul>
+</div>
   <button>
 Cadastrar
   </button>
@@ -218,7 +232,7 @@ Cadastrar
     </div>
     </li>
   </ul>
-  <button>
+  <button @click="irParaHome">
     login
   </button>
 </section>
@@ -238,9 +252,12 @@ Cadastrar
     </div>
     </li>
   </ul>
-  <button>
+  <button @click="irParaHome">
     login
   </button>
+</section>
+<section v-if="paginaAtual === 'Home'" id="">
+
 </section>
   </main>
   <footer>
