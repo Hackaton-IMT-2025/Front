@@ -18,13 +18,10 @@ function irParaLoginEmpresa() {
   paginaAtual.value = "LoginEmpresa";
 }
 function irParaHome() {
-  paginaAtual.value = "Home";
+  paginaAtual.value = "Home2";
 }
 function irParaUsuario() {
   paginaAtual.value = "Usuario";
-}
-function irParaUsuario2() {
-  paginaAtual.value = "Usuario2";
 }
 function irParaBusca() {
   paginaAtual.value = "Busca";
@@ -41,7 +38,7 @@ function irParaHabilidadesNecessarias() {
   <ul>
     <li><a href="">Vagas</a></li>
     <li><a href="">Empresas</a></li>
-    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)">
+    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa', 'criarEmpresas' , 'criarFormado' ,].includes(paginaAtual)">
       <button @click="irParaLogin">Login</button>
     </li>
     <li v-else>
@@ -49,11 +46,12 @@ function irParaHabilidadesNecessarias() {
     </li>
   </ul>
   <div 
-    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)"
+    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa', 'criarEmpresas' , 'criarFormado'].includes(paginaAtual)"
   >
     <input type="text" placeholder="Buscar..." />
     <button>
       <i class="fa-solid fa-magnifying-glass"></i>
+      <img src="../public/imagens/flame6.png" alt="flame6.png">
     </button>
   </div>
 </header>
@@ -180,7 +178,7 @@ function irParaHabilidadesNecessarias() {
     </li>
   </ul>
 </div>
-  <button>
+  <button @click="irParaHome">
 Cadastrar
   </button>
 </section>
@@ -212,7 +210,7 @@ Cadastrar
     </div>
     </li>
   </ul>
-  <button>
+  <button @click="irParaHome">
 Cadastrar
   </button>
 </section>
@@ -256,8 +254,83 @@ Cadastrar
     login
   </button>
 </section>
-<section v-if="paginaAtual === 'Home'" id="">
-
+<section v-if="paginaAtual === 'Home2'" id="homeSection">
+  <div>
+    <button>
+    <input type="text" placeholder="Criar uma publicação">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <img src="../public/imagens/flame5.png" alt="flame5.png">
+  </button>
+  <img src="../public/imagens/flame2.png" alt="flame2.png">
+  <h2>
+    Empresa tal
+  </h2>
+  <p>
+    Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo mundo que precisava de um pouco de paz acabava encontrando o lugar.
+  </p>
+  <ul>
+    <li>
+      <p>
+        Horarios
+      </p>
+    </li>
+    <li>
+      Salario
+    </li>
+    <li>
+      Lugar
+    </li>
+    <li>
+      Demais informações
+    </li>
+  </ul>
+  <img src="../public/imagens/flame2.png" alt="flame2.png">
+  <h2>
+    Empresa sla
+  </h2>
+  <p>
+    Lá dentro, o tempo parecia andar devagar. As paredes estavam cobertas de livros esquecidos, e cada mesa tinha uma vela que só acendia quando alguém sentava com o coração aberto
+  </p>
+  <ul>
+    <li>
+      <p>
+        Horarios
+      </p>
+    </li>
+    <li>
+      Salario
+    </li>
+    <li>
+      Lugar
+    </li>
+    <li>
+      Demais informações
+    </li>
+  </ul>
+  </div>
+  <div>
+<ul>
+  <li>
+    <img src="../public/imagens/flame.png" alt="flame.png">
+    <p>
+      Nome: ******
+      Especialização: ******
+      Localidade: ******
+      Local de Estudos: *******
+    </p>
+  </li>
+  <li>
+    <p>Notificações</p>
+    <img src="../public/imagens/flame4.png" alt="flame4.png">
+  </li>
+  <li>
+    <img src="../public/imagens/flame3.png" alt="flame3.png">
+    <p>
+      Curriculum
+    </p>
+  </li>
+</ul>
+  </div>
 </section>
   </main>
   <footer>
