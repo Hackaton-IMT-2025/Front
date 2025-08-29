@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-const paginaAtual = ref("home"); 
+const paginaAtual = ref("home");
 
 function irParaLogin() {
   paginaAtual.value = "login";
@@ -51,7 +51,7 @@ function irParaHabilidadesNecessarias() {
       <img src="../public/imagens/flame.png" alt="flame.png">
     </li>
   </ul>
-  <div 
+  <div
     v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)"
   >
     <input type="text" placeholder="Buscar..." />
@@ -241,7 +241,7 @@ Cadastrar
   </button>
 </section>
 <section v-if="paginaAtual === 'LoginEmpresa'" id="LoginEmpresasSection">
-  <img src="../public/imagens/flame.png" alt="flame.png">  
+  <img src="../public/imagens/flame.png" alt="flame.png">
   <ul>
     <li>
       <div>
@@ -263,6 +263,7 @@ Cadastrar
 <section v-if="paginaAtual === 'Home'" id="">
 
 </section>
+
   </main>
   <div class="degrade-bottom"></div>
   </div>
@@ -294,7 +295,7 @@ Cadastrar
     <ul>
       <li>
         <a href="https://x.com/IMT184516329585"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
-        
+
       </li>
       <li>
         <a href="https://www.facebook.com/profile.php?id=61579092402663"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg></a>
@@ -351,81 +352,157 @@ Cadastrar
   transform: scaleX(-1);
 }
 /*============================================================
-                            header                            
+                            HEADER
 ============================================================*/
-header{
+header {
   display: flex;
-  position: relative;
   align-items: center;
   justify-content: space-between;
-  margin: 40px 150px 0px 150px;
-}header ul{
+  margin: 20px 5%;
+  position: relative;
+  z-index: 2;
+}
+
+header ul {
   display: flex;
-  margin: 20px 0px 0px 700px ;
+  gap: 40px;
   align-items: center;
-}header ul li{
-  text-decoration: none;
-}header ul li p{
-  margin: 10px 50px;
-}header ul li a{
+  list-style: none;
+}
+
+header ul li a {
   text-decoration: none;
   color: aliceblue;
-} header ul li button a{
-  color: #0c0c0c;
+  font-weight: 500;
 }
+
+header ul li button {
+  background: #fff;
+  color: #0c0c0c;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+header ul li button:hover {
+  background: #b1b1b1;
+}
+
 /*======================================
-                mainpage
+                MAIN
 =======================================*/
 .mainpage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 10%;
+  text-align: center;
   position: absolute;
-  align-content: center;
+}
+.hero{
+  justify-content: center;
   align-items: center;
-  /*-----hero------*/
-}.hero{
+}
+.hero p {
+  color: #f8f8f8;
+  margin: auto;
+  line-height: 1.6;
+  max-width: 800px;
+}
+.hero{
+  justify-content: center;
   align-items: center;
-  text-align:center ;
-}.escolha{
+}
+.hero h1 {
+  font-size: 3rem;
+  color: #b1b1b1;
+  margin: 40px 0;
+  mix-blend-mode: color-dodge;
+}
+.escolha {
   display: flex;
   align-items: center;
   justify-content: center;
-}.escolha p{
-margin: 0px;
-}.ou{
-  margin: 5px;
-}.somosimt{
-  justify-content: center;
-  align-items: center;
+  gap: 20px;
 }
-p{
-  color: #f8f8f8;
-  margin: 30px 32vw 0px 32vw;
-  line-height: 23px;
-}button{
-  padding: 10px 20px;
-  border-radius: 20px;
-  border-style: none;
-  margin: 20px 50px 20px 50px;
-}.botoes-opcao button{
-  margin: 10px 60px;
-}h1{
-  font-size: 5vw;
-  color: #b1b1b1;
-  mix-blend-mode: color-dodge;
-  margin: 10px 0px 300px 0px;
 
-}.voce{
-  margin: 0;
+/* Botões gerais */
+button {
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  margin: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #fff;
+  color: #0c0c0c;
+  transition: all 0.3s;
 }
-/*=================================
-                footer             
-=================================*/
-footer{
+
+button:hover {
+  background: #b1b1b1;
+}
+
+/* Inputs */
+input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin: 10px 0;
   width: 100%;
+  max-width: 300px;
 }
-footer ul li a{
-       width: 10%;
+
+/*=================================
+                FOOTER
+=================================*/
+footer {
+  background: #0d0d36;
+  padding: 20px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+footer ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+footer a {
+  color: aliceblue;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #b1b1b1;
+}
+
+footer svg {
+  width: 24px;
+  height: 24px;
+  fill: aliceblue;
+  transition: fill 0.3s;
+}
+
+footer svg:hover {
+  fill: #b1b1b1;
+}
+
+footer p {
+  color: #b1b1b1;
+  font-size: 0.9rem;
 }
 </style>
-
 
 
