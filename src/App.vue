@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-const paginaAtual = ref("home"); 
+const paginaAtual = ref("home");
 
 function irParaLogin() {
   paginaAtual.value = "login";
@@ -18,10 +18,13 @@ function irParaLoginEmpresa() {
   paginaAtual.value = "LoginEmpresa";
 }
 function irParaHome() {
-  paginaAtual.value = "Home2";
+  paginaAtual.value = "Home";
 }
 function irParaUsuario() {
   paginaAtual.value = "Usuario";
+}
+function irParaUsuario2() {
+  paginaAtual.value = "Usuario2";
 }
 function irParaBusca() {
   paginaAtual.value = "Busca";
@@ -32,33 +35,33 @@ function irParaHabilidadesNecessarias() {
 </script>
 
 <template>
-  <main>
+  <div class="background">
+    <div class="degrade-top"></div>
+    <div class="lado-esquerdo"></div>
+    <div class="lado-direito"></div>
+    <main class="mainpage">
     <header>
-<header>
   <ul>
-    <li><a href="">Vagas</a></li>
-    <li><a href="">Empresas</a></li>
-    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa', 'criarEmpresas' , 'criarFormado' ,].includes(paginaAtual)">
+    <li><a href=""><p>Vagas</p></a></li>
+    <li><a href=""><p>Empresas</p></a></li>
+    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)">
       <button @click="irParaLogin">Login</button>
     </li>
     <li v-else>
       <img src="../public/imagens/flame.png" alt="flame.png">
     </li>
   </ul>
-  <div 
-    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa', 'criarEmpresas' , 'criarFormado'].includes(paginaAtual)"
+  <div
+    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)"
   >
     <input type="text" placeholder="Buscar..." />
     <button>
       <i class="fa-solid fa-magnifying-glass"></i>
-      <img src="../public/imagens/flame6.png" alt="flame6.png">
     </button>
   </div>
 </header>
-
-    </header>
     <div v-if="paginaAtual === 'home'">
-    <section>
+    <section class="hero">
       <p>
         Oi, somos o projeto IMT, um site com o proposito de apoiar ao egressados na sua procura no ambito laboral e
         empresas na busqueda de trabalhadores de qualidade, se tua empresa está procurando vacantes ou voce é um
@@ -67,6 +70,7 @@ function irParaHabilidadesNecessarias() {
       <p>
         Voce é:
       </p>
+      <div class="escolha">
       <button @click="irParaCriarEmpresas">
           Empresa
       </button>
@@ -76,6 +80,8 @@ function irParaHabilidadesNecessarias() {
       <button @click="irParaCriarFormado">
       Formado
       </button>
+      </div>
+      <h1>INTRODUÇÃO AO MUNDO DO TRABALHO</h1>
     </section>
     <section>
       <ul>
@@ -178,7 +184,7 @@ function irParaHabilidadesNecessarias() {
     </li>
   </ul>
 </div>
-  <button @click="irParaHome">
+  <button>
 Cadastrar
   </button>
 </section>
@@ -210,7 +216,7 @@ Cadastrar
     </div>
     </li>
   </ul>
-  <button @click="irParaHome">
+  <button>
 Cadastrar
   </button>
 </section>
@@ -235,7 +241,7 @@ Cadastrar
   </button>
 </section>
 <section v-if="paginaAtual === 'LoginEmpresa'" id="LoginEmpresasSection">
-  <img src="../public/imagens/flame.png" alt="flame.png">  
+  <img src="../public/imagens/flame.png" alt="flame.png">
   <ul>
     <li>
       <div>
@@ -254,85 +260,13 @@ Cadastrar
     login
   </button>
 </section>
-<section v-if="paginaAtual === 'Home2'" id="homeSection">
-  <div>
-    <button>
-    <input type="text" placeholder="Criar uma publicação">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <img src="../public/imagens/flame5.png" alt="flame5.png">
-  </button>
-  <img src="../public/imagens/flame2.png" alt="flame2.png">
-  <h2>
-    Empresa tal
-  </h2>
-  <p>
-    Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo mundo que precisava de um pouco de paz acabava encontrando o lugar.
-  </p>
-  <ul>
-    <li>
-      <p>
-        Horarios
-      </p>
-    </li>
-    <li>
-      Salario
-    </li>
-    <li>
-      Lugar
-    </li>
-    <li>
-      Demais informações
-    </li>
-  </ul>
-  <img src="../public/imagens/flame2.png" alt="flame2.png">
-  <h2>
-    Empresa sla
-  </h2>
-  <p>
-    Lá dentro, o tempo parecia andar devagar. As paredes estavam cobertas de livros esquecidos, e cada mesa tinha uma vela que só acendia quando alguém sentava com o coração aberto
-  </p>
-  <ul>
-    <li>
-      <p>
-        Horarios
-      </p>
-    </li>
-    <li>
-      Salario
-    </li>
-    <li>
-      Lugar
-    </li>
-    <li>
-      Demais informações
-    </li>
-  </ul>
-  </div>
-  <div>
-<ul>
-  <li>
-    <img src="../public/imagens/flame.png" alt="flame.png">
-    <p>
-      Nome: ******
-      Especialização: ******
-      Localidade: ******
-      Local de Estudos: *******
-    </p>
-  </li>
-  <li>
-    <p>Notificações</p>
-    <img src="../public/imagens/flame4.png" alt="flame4.png">
-  </li>
-  <li>
-    <img src="../public/imagens/flame3.png" alt="flame3.png">
-    <p>
-      Curriculum
-    </p>
-  </li>
-</ul>
-  </div>
+<section v-if="paginaAtual === 'Home'" id="">
+
 </section>
+
   </main>
+  <div class="degrade-bottom"></div>
+  </div>
   <footer>
     <img src="../public/imagens/Captura de tela de 2025-07-04 13-40-50-Photoroom 1.png"
       alt="Captura de tela de 2025-07-04 13-40-50-Photoroom.png">
@@ -361,7 +295,7 @@ Cadastrar
     <ul>
       <li>
         <a href="https://x.com/IMT184516329585"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
-        
+
       </li>
       <li>
         <a href="https://www.facebook.com/profile.php?id=61579092402663"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg></a>
@@ -373,7 +307,255 @@ Cadastrar
     <p>&copy;2025 Copyright</p>
   </footer>
 </template>
-
 <style scoped>
+/*==============================================
+                  background
+===============================================*/
+.background {
+  background:rgb(5, 5, 19);
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+.degrade-top,
+.degrade-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 5;
+  pointer-events: none;
+}
+.degrade-top {
+  top: 0;
+  background: linear-gradient(to bottom, #0d0d36, rgba(8, 8, 30, 0));
+  z-index: 1;
+}
 
-</style>
+.degrade-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, #0d0d36, rgba(8, 8, 30, 0));
+}
+
+.lado-esquerdo {
+  width: 50%;
+  background: conic-gradient(from 90deg at 50% 80%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
+  mix-blend-mode: color-dodge;
+  height: 100%;
+}
+
+.lado-direito {
+  width: 50%;
+  background: conic-gradient(from 90deg at 50% 80%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
+  mix-blend-mode: color-dodge;
+  height: 100%;
+  transform: scaleX(-1);
+}
+/*============================================================
+                            HEADER
+============================================================*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 5%;
+  position: relative;
+  z-index: 2;
+}
+
+header ul {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  list-style: none;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: aliceblue;
+  font-weight: 500;
+}
+
+header ul li button {
+  background: #fff;
+  color: #0c0c0c;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+header ul li button:hover {
+  background: #b1b1b1;
+}
+
+/*======================================
+                MAIN
+=======================================*/
+.mainpage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 10%;
+  text-align: center;
+  position: absolute;
+}
+.hero{
+  justify-content: center;
+  align-items: center;
+}
+.hero p {
+  color: #f8f8f8;
+  margin: auto;
+  line-height: 1.6;
+  max-width: 800px;
+}
+.hero{
+  justify-content: center;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 3rem;
+  color: #b1b1b1;
+  margin: 40px 0;
+  mix-blend-mode: color-dodge;
+}
+.escolha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Botões gerais */
+button {
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  margin: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #fff;
+  color: #0c0c0c;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: #b1b1b1;
+}
+
+/* Inputs */
+input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 300px;
+}
+
+/*=================================
+                FOOTER
+=================================*/
+footer {
+  background: #0d0d36;
+  padding: 20px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+footer ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+footer a {
+  color: aliceblue;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #b1b1b1;
+}
+
+footer svg {
+  width: 24px;
+  height: 24px;
+  fill: aliceblue;
+  transition: fill 0.3s;
+}
+
+footer svg:hover {
+  fill: #b1b1b1;
+}
+
+button:hover {
+  background: #b1b1b1;
+}
+
+/* Inputs */
+input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 300px;
+}
+
+/*=================================
+                FOOTER
+=================================*/
+footer {
+  background: #0d0d36;
+  padding: 20px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+footer ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+footer a {
+  color: aliceblue;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #b1b1b1;
+}
+
+footer svg {
+  width: 24px;
+  height: 24px;
+  fill: aliceblue;
+  transition: fill 0.3s;
+}
+
+footer svg:hover {
+  fill: #b1b1b1;
+}
+
+footer p {
+  color: #b1b1b1;
+  font-size: 0.9rem;
+}
