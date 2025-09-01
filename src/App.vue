@@ -20,93 +20,18 @@ function irParaLoginEmpresa() {
 function irParaHome() {
   paginaAtual.value = "Home";
 }
-
-//Lucy feito
-document.addEventListener("DOMContentLoaded", (event) => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const linhaDoTempo = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".divPai",
-      start: "top top",
-      end: "+=2000",
-      pin: true,
-      scrub: 2,
-    },
-  });
-
-  linhaDoTempo.to(".divGradient", {
-    opacity: 0,
-    duration: 1,
-  });
-
-  linhaDoTempo.from(
-    ".divGradient2",
-    {
-      opacity: 0,
-      duration: 1,
-    },
-    "<"
-  );
-
-  linhaDoTempo.to(
-    ".tituloHero",
-    {
-      opacity: 0,
-      duration: 1,
-    },
-    "<"
-  );
-
-  const listaCards = document.querySelectorAll(".card");
-
-  listaCards.forEach((xuxa) => {
-    linhaDoTempo.from(xuxa, {
-      opacity: 0,
-      filter: "blur(30px)",
-      duration: 0.5,
-    });
-
-    linhaDoTempo.to(
-      xuxa,
-      {
-        opacity: 0,
-        filter: "blur(30px)",
-        duration: 0.5,
-      },
-      "+=.5"
-    );
-  });
-
-  linhaDoTempo.to(
-    ".divGradient2",
-    {
-      opacity: 0,
-      duration: 0.5,
-    },
-    "-=.5"
-  );
-
-  linhaDoTempo.from(
-    ".divObrigado",
-    {
-      opacity: 0,
-      duration: 0.5,
-    },
-    "<"
-  );
-
-  linhaDoTempo.to(
-    ".divObrigado",
-    {
-      scaleX: 1,
-      rotateX: 0,
-      top: 0,
-      borderRadius: 0,
-      duration: 1,
-    }
-  );
-});
+function irParaUsuario() {
+  paginaAtual.value = "Usuario";
+}
+function irParaUsuario2() {
+  paginaAtual.value = "Usuario2";
+}
+function irParaBusca() {
+  paginaAtual.value = "Busca";
+}
+function irParaHabilidadesNecessarias() {
+  paginaAtual.value = "HabilidadesNecessarias";
+}
 </script>
 
 <template>
@@ -577,20 +502,5 @@ footer svg:hover {
 footer p {
   color: #b1b1b1;
   font-size: 0.9rem;
-}
-
-/*=================================
-            Lucy feito
-=================================*/
-
-.divPai{
-    height: 100vh;
-    perspective: 3000px;
-    perspective-origin: 50% 73%
-}
-
-.divObrigado{
-    transform: rotateX(90deg) scaleX(.44);
-    border-radius: 40px
 }
 </style>
