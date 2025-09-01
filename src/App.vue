@@ -1,44 +1,142 @@
-<<script setup>
+<script setup>
 import { ref } from 'vue';
-
-const paginaAtual = ref("home"); 
+const paginaAtual = ref("home");
 
 function irParaLogin() {
   paginaAtual.value = "login";
 }
+function irParaCriarEmpresas() {
+  paginaAtual.value = "criarEmpresas";
+}
+function irParaCriarFormado() {
+  paginaAtual.value = "criarFormado";
+}
+function irParaLoginFormado() {
+  paginaAtual.value = "LoginFormado";
+}
+function irParaLoginEmpresa() {
+  paginaAtual.value = "LoginEmpresa";
+}
+function irParaHome() {
+  paginaAtual.value = "Home";
+}
+
+//Lucy feito
+document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const linhaDoTempo = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".divPai",
+      start: "top top",
+      end: "+=2000",
+      pin: true,
+      scrub: 2,
+    },
+  });
+
+  linhaDoTempo.to(".divGradient", {
+    opacity: 0,
+    duration: 1,
+  });
+
+  linhaDoTempo.from(
+    ".divGradient2",
+    {
+      opacity: 0,
+      duration: 1,
+    },
+    "<"
+  );
+
+  linhaDoTempo.to(
+    ".tituloHero",
+    {
+      opacity: 0,
+      duration: 1,
+    },
+    "<"
+  );
+
+  const listaCards = document.querySelectorAll(".card");
+
+  listaCards.forEach((xuxa) => {
+    linhaDoTempo.from(xuxa, {
+      opacity: 0,
+      filter: "blur(30px)",
+      duration: 0.5,
+    });
+
+    linhaDoTempo.to(
+      xuxa,
+      {
+        opacity: 0,
+        filter: "blur(30px)",
+        duration: 0.5,
+      },
+      "+=.5"
+    );
+  });
+
+  linhaDoTempo.to(
+    ".divGradient2",
+    {
+      opacity: 0,
+      duration: 0.5,
+    },
+    "-=.5"
+  );
+
+  linhaDoTempo.from(
+    ".divObrigado",
+    {
+      opacity: 0,
+      duration: 0.5,
+    },
+    "<"
+  );
+
+  linhaDoTempo.to(
+    ".divObrigado",
+    {
+      scaleX: 1,
+      rotateX: 0,
+      top: 0,
+      borderRadius: 0,
+      duration: 1,
+    }
+  );
+});
 </script>
 
-
-
 <template>
-  <main>
+  <div class="background">
+    <div class="degrade-top"></div>
+    <div class="lado-esquerdo"></div>
+    <div class="lado-direito"></div>
+    <main class="mainpage">
     <header>
-      <nav>
-        <img src="../public/imagens/Captura de tela de 2025-07-04 13-40-50-Photoroom 1.png "
-          alt="tela de 2025-07-04 13-40-50-Photoroom.png">
-      </nav>
-      <ul>
-        <li>
-          <p>
-            <a href="">vagas</a>
-          </p>
-        </li>
-        <li>
-          <a href="">Empresas</a>
-        </li>
-        <li>
-          <button>
-            <p>
-              <a href="">Login</a>
-            </p>
-          </button>
-        </li>
-      </ul>
-    </header>
+  <ul>
+    <li><a href=""><p>Vagas</p></a></li>
+    <li><a href=""><p>Empresas</p></a></li>
+    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)">
+      <button @click="irParaLogin">Login</button>
+    </li>
+    <li v-else>
+      <img src="../public/imagens/flame.png" alt="flame.png">
+    </li>
+  </ul>
+  <div
+    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)"
+  >
+    <input type="text" placeholder="Buscar..." />
+    <button>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+</header>
     <div v-if="paginaAtual === 'home'">
-
-
-    <section>
+    <section class="hero">
       <p>
         Oi, somos o projeto IMT, um site com o proposito de apoiar ao egressados na sua procura no ambito laboral e
         empresas na busqueda de trabalhadores de qualidade, se tua empresa está procurando vacantes ou voce é um
@@ -47,35 +145,32 @@ function irParaLogin() {
       <p>
         Voce é:
       </p>
-      <button>
-        <p>
+      <div class="escolha">
+      <button @click="irParaCriarEmpresas">
           Empresa
-        </p>
       </button>
       <p>
         Ou
       </p>
-      <button @click="irParaLogin">
+      <button @click="irParaCriarFormado">
       Formado
       </button>
-      <img src="../public/imagens/image 11(2).png" alt="image 11.png">
+      </div>
+      <h1>INTRODUÇÃO AO MUNDO DO TRABALHO</h1>
     </section>
     <section>
       <ul>
         <li>
-          <img src="../public/imagens/image 1(2).png" alt="image 1(1).png">
           <p>
             Nossas estadisticas tem um avanço do 90%
           </p>
         </li>
         <li>
-          <img src="../public/imagens/image 2(1).png" alt="image 2.png">
           <p>
             O 89% dos nossos graduados recebem propostas de trabalho cada semana
           </p>
         </li>
         <li>
-          <img src="../public/imagens/image 3(1).png" alt="image 3.png">
           <p>
             O 94% das nossas empresas amigas se sentem satisfeitas com nossos graduados
           </p>
@@ -89,7 +184,6 @@ function irParaLogin() {
         sua privacidade seja sempre respeitada. Confie em nós para proporcionar uma experiência online segura e
         tranquila. Aqui, seu bem-estar digital é o nosso compromisso!
       </p>
-      <img src="../public/imagens/image 4(1).png" alt="image 4.png">
     </section>
     <section>
       <p>
@@ -107,11 +201,147 @@ function irParaLogin() {
     </section>
   </div>
   <section v-if="paginaAtual === 'login'" id="loginFormadoSection">
-  
+
+    <h1>Voce é?</h1>
+    <button @click="irParaLoginFormado">
+      Formado
+    </button>
+    <button @click="irParaLoginEmpresa">
+      Empresa
+    </button>
+  </section>
+  <section>
+
+  </section>
+<section v-if="paginaAtual === 'criarEmpresas'" id="criarEmpresasSection">
+  <h1>Cria sua empresa</h1>
+<div>
+  <ul>
+    <li>
+      <div>
+      <input type="text" placeholder="nome da empresa">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="email">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  </div>
+  <div>
+  <ul>
+    <li>
+      <div>
+      <input type="text" placeholder="Endereço">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="CNPJ">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="Confirmação da senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+</div>
+  <button>
+Cadastrar
+  </button>
+</section>
+<section v-if="paginaAtual === 'criarFormado'" id="criarFormadoSection">
+<h1>Cria sua conta de formado</h1>
+<ul>
+    <li>
+      <div>
+      <input type="text" placeholder="nome da empresa">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="email">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="Confirmação da senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  <button>
+Cadastrar
+  </button>
+</section>
+<section v-if="paginaAtual === 'LoginFormado'" id="LoginFormadoSection">
+  <img src="../public/imagens/flame.png" alt="flame.png">
+  <ul>
+    <li>
+      <div>
+      <input type="text" placeholder="email">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  <button @click="irParaHome">
+    login
+  </button>
+</section>
+<section v-if="paginaAtual === 'LoginEmpresa'" id="LoginEmpresasSection">
+  <img src="../public/imagens/flame.png" alt="flame.png">
+  <ul>
+    <li>
+      <div>
+      <input type="text" placeholder="CNPJ">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+    <li>
+      <div>
+      <input type="text" placeholder="senha">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    </li>
+  </ul>
+  <button @click="irParaHome">
+    login
+  </button>
+</section>
+<section v-if="paginaAtual === 'Home'" id="">
+
 </section>
 
-
   </main>
+  <div class="degrade-bottom"></div>
+  </div>
   <footer>
     <img src="../public/imagens/Captura de tela de 2025-07-04 13-40-50-Photoroom 1.png"
       alt="Captura de tela de 2025-07-04 13-40-50-Photoroom.png">
@@ -122,9 +352,9 @@ function irParaLogin() {
         </p>
       </li>
       <li>
-        <p>
-          <a href="">login</a>
-        </p>
+        <button @click="irParaLogin">
+        login
+        </button>
       </li>
       <li>
         <p>
@@ -140,7 +370,7 @@ function irParaLogin() {
     <ul>
       <li>
         <a href="https://x.com/IMT184516329585"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
-        
+
       </li>
       <li>
         <a href="https://www.facebook.com/profile.php?id=61579092402663"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg></a>
@@ -152,7 +382,215 @@ function irParaLogin() {
     <p>&copy;2025 Copyright</p>
   </footer>
 </template>
-
 <style scoped>
+/*==============================================
+                  background
+===============================================*/
+.background {
+  background:rgb(5, 5, 19);
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+.degrade-top,
+.degrade-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 5;
+  pointer-events: none;
+}
+.degrade-top {
+  top: 0;
+  background: linear-gradient(to bottom, #0d0d36, rgba(8, 8, 30, 0));
+  z-index: 1;
+}
 
+.degrade-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, #0d0d36, rgba(8, 8, 30, 0));
+}
+
+.lado-esquerdo {
+  width: 50%;
+  background: conic-gradient(from 90deg at 50% 80%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
+  mix-blend-mode: color-dodge;
+  height: 100%;
+}
+
+.lado-direito {
+  width: 50%;
+  background: conic-gradient(from 90deg at 50% 80%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
+  mix-blend-mode: color-dodge;
+  height: 100%;
+  transform: scaleX(-1);
+}
+/*============================================================
+                            HEADER
+============================================================*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 5%;
+  position: relative;
+  z-index: 2;
+}
+
+header ul {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  list-style: none;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: aliceblue;
+  font-weight: 500;
+}
+
+header ul li button {
+  background: #fff;
+  color: #0c0c0c;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+header ul li button:hover {
+  background: #b1b1b1;
+}
+
+/*======================================
+                MAIN
+=======================================*/
+.mainpage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 10%;
+  text-align: center;
+  position: absolute;
+}
+.hero{
+  justify-content: center;
+  align-items: center;
+}
+.hero p {
+  color: #f8f8f8;
+  margin: auto;
+  line-height: 1.6;
+  max-width: 800px;
+}
+.hero{
+  justify-content: center;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 3rem;
+  color: #b1b1b1;
+  margin: 40px 0;
+  mix-blend-mode: color-dodge;
+}
+.escolha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Botões gerais */
+button {
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  margin: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #fff;
+  color: #0c0c0c;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: #b1b1b1;
+}
+
+/* Inputs */
+input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 300px;
+}
+
+/*=================================
+                FOOTER
+=================================*/
+footer {
+  background: #0d0d36;
+  padding: 20px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+footer ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+footer a {
+  color: aliceblue;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #b1b1b1;
+}
+
+footer svg {
+  width: 24px;
+  height: 24px;
+  fill: aliceblue;
+  transition: fill 0.3s;
+}
+
+footer svg:hover {
+  fill: #b1b1b1;
+}
+
+footer p {
+  color: #b1b1b1;
+  font-size: 0.9rem;
+}
+
+/*=================================
+            Lucy feito
+=================================*/
+
+.divPai{
+    height: 100vh;
+    perspective: 3000px;
+    perspective-origin: 50% 73%
+}
+
+.divObrigado{
+    transform: rotateX(90deg) scaleX(.44);
+    border-radius: 40px
+}
 </style>
