@@ -20,17 +20,17 @@ function irParaLoginEmpresa() {
 function irParaHome() {
   paginaAtual.value = "Home";
 }
-function irParaUsuario() {
-  paginaAtual.value = "Usuario";
-}
-function irParaUsuario2() {
-  paginaAtual.value = "Usuario2";
-}
 function irParaBusca() {
   paginaAtual.value = "Busca";
 }
 function irParaHabilidadesNecessarias() {
   paginaAtual.value = "HabilidadesNecessarias";
+}
+function irParaSelecaodecandidatos() {
+  paginaAtual.value = "Selecaodecandidatos";
+}
+function irParaUsuario() {
+  paginaAtual.value = "Usuario";
 }
 </script>
 
@@ -44,7 +44,7 @@ function irParaHabilidadesNecessarias() {
   <ul>
     <li><a href=""><p>Vagas</p></a></li>
     <li><a href=""><p>Empresas</p></a></li>
-    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)">
+    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa' , 'irParaCriarEmpresas' , 'irParaCriarFormado'].includes(paginaAtual)">
       <button @click="irParaLogin">Login</button>
     </li>
     <li v-else>
@@ -52,7 +52,7 @@ function irParaHabilidadesNecessarias() {
     </li>
   </ul>
   <div
-    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)"
+    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa', 'irParaCriarEmpresas' , 'irParaCriarFormado'].includes(paginaAtual)"
   >
     <input type="text" placeholder="Buscar..." />
     <button>
@@ -184,7 +184,7 @@ function irParaHabilidadesNecessarias() {
     </li>
   </ul>
 </div>
-  <button>
+  <button @click="irParaHome">
 Cadastrar
   </button>
 </section>
@@ -216,7 +216,7 @@ Cadastrar
     </div>
     </li>
   </ul>
-  <button>
+  <button @click="irParaHome">
 Cadastrar
   </button>
 </section>
@@ -260,10 +260,210 @@ Cadastrar
     login
   </button>
 </section>
-<section v-if="paginaAtual === 'Home'" id="">
-
+<section v-if="paginaAtual === 'Home'" id="HomeSection">
+<div>
+  <input type="text" placeholder="Criar uma publicação">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <img src="../public/imagens/flame5.png" alt="flame5.png">
+</div>
+<div>
+<ul>
+  <li>
+  <img src="../public/imagens/flame2.png" alt="flame2.png">
+  <h2>Empresa tal</h2>
+  </li>
+  <li>
+    <p>
+    Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo mundo que precisava de um pouco de paz acabava encontrando o lugar.
+    </p> 
+  </li>
+  <li>
+    <p>
+      Horarios
+    </p>
+    </li>
+    <li>
+      <p>
+        Salario
+      </p>
+    </li>
+    <li>
+      <p>
+        Localização
+      </p>
+    </li>
+    <li>
+      <p>
+        Demais informações
+      </p>
+    </li>
+</ul>
+<ul>
+  <li>
+    <img src="../public/imagens/flame2.png" alt="flame2.png">
+    <h2>Empresa tal</h2>
+  </li>
+  <li>
+    <p>
+      Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo mundo que precisava de um pouco de paz acabava encontrando o lugar.
+    </p> 
+  </li>
+  <li>
+    <p>
+      Horarios
+    </p>
+  </li>
+  <li>
+    <p>
+      Salario
+    </p>
+  </li>
+  <li>
+    <p>
+      Localização
+    </p>
+  </li>
+  <li>
+    <p>
+      Demais informações
+    </p>
+    </li>
+</ul>
+</div>
+<div>
+  <ul>
+    <li>
+      <img src="../public/imagens/flame.png" alt="flame.png">
+    </li>
+    <li>
+      Nome: ******
+      Especialização: ******
+      Localidade: ******
+      Local de Estudos: *******
+    </li>
+    <li>
+      <p>
+        Notificações
+      </p>
+      <img src="../public/imagens/flame4.png" alt="flame4.png">
+    </li>
+    <li>
+      <p>
+        Curriculum
+      </p>
+      <img src="../public/imagens/flame3.png" alt="flame3.png">
+    </li>
+  </ul>
+</div>
 </section>
-
+<section  v-if="paginaAtual === 'irParaBusca'" id="irParaBuscaSection">
+<div>
+  <ul>
+    <li>
+      <img src="../public/imagens/flame2.png" alt="flame2.png">
+      <h2>
+        Empresa Salario
+      </h2>
+      <p>
+        Precisamos estagiario de desenvolvedor em java
+      </p>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li>
+      <img src="../public/imagens/flame2.png" alt="flame2.png">
+      <h2>
+        Empresa Salario
+      </h2>
+    </li>
+    <li>
+      <p>
+        Lá dentro, o tempo parecia andar devagar. As paredes estavam cobertas de livros esquecidos, e cada mesa tinha uma vela que só acendia quando alguém sentava com o coração aberto
+      </p>
+    </li>
+    <li>
+      <button>
+        Habilidades necessarias
+      </button>
+    </li>
+    <li>
+      <p>
+        Horário:****************
+        Salario:*********
+        Modalidade:****************
+        Localização:******************
+      </p>
+    </li>
+    <li>
+      <p>
+        Lá dentro, o tempo parecia andar devagar. As paredes estavam cobertas de livros esquecidos, e cada mesa tinha uma vela que só acendia quando alguém sentava com o coração aberto
+      </p>
+    </li>
+    <li>
+      <button>
+        Candidatar-se
+      </button>
+    </li>
+    <li>
+      <button>
+        Enviar curriculum
+      </button>
+    </li>
+  </ul>
+</div>
+</section>
+<section v-if="paginaAtual === 'irParaHabilidadesNecessarias'" id="irParaHabilidadesNecessariasSection">
+<ul>
+  <li>
+    <img src="../public/imagens/flame1.png" alt="flame1.png">
+    <h2>
+      Habilidades que voce possui e são requeridas para o cargo
+    </h2>
+  </li>
+  <li>
+    <button>
+      Habilidades
+    </button>
+  </li>
+  <li>
+    <button>
+      Habilidades
+    </button>
+  </li>
+  <li>
+    <button>
+      Habilidades
+    </button>
+  </li>
+  <li>
+    <h2>
+      Habilidades que voce não possui e são requeridas para o cargo
+    </h2>
+  </li>
+  <li>
+    <button>
+      Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png">
+    </button>
+  </li>
+  <li>
+    <button>
+      Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png">
+    </button>
+  </li>
+  <li>
+    <button>
+      Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png">
+    </button>
+  </li>
+  <li>
+    <button>
+      Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png">
+    </button>
+  </li>
+</ul>
+</section>
   </main>
   <div class="degrade-bottom"></div>
   </div>
@@ -559,3 +759,4 @@ footer p {
   color: #b1b1b1;
   font-size: 0.9rem;
 }
+</style>
