@@ -499,8 +499,63 @@ footer svg:hover {
   fill: #b1b1b1;
 }
 
+button:hover {
+  background: #b1b1b1;
+}
+
+/* Inputs */
+input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 300px;
+}
+
+/*=================================
+                FOOTER
+=================================*/
+footer {
+  background: #0d0d36;
+  padding: 20px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+footer ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+footer a {
+  color: aliceblue;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #b1b1b1;
+}
+
+footer svg {
+  width: 24px;
+  height: 24px;
+  fill: aliceblue;
+  transition: fill 0.3s;
+}
+
+footer svg:hover {
+  fill: #b1b1b1;
+}
+
 footer p {
   color: #b1b1b1;
   font-size: 0.9rem;
 }
-</style>
