@@ -1,58 +1,61 @@
 <script setup>
 import { ref } from 'vue';
+
 const paginaAtual = ref("home");
 
 function irParaLogin() {
   paginaAtual.value = "login";
 }
 function irParaCriarEmpresas() {
-  paginaAtual.value = "criarEmpresas";
+  paginaAtual.value = "criarempresas";
 }
 function irParaCriarFormado() {
-  paginaAtual.value = "criarFormado";
+  paginaAtual.value = "criarformado";
 }
 function irParaLoginFormado() {
-  paginaAtual.value = "LoginFormado";
+  paginaAtual.value = "loginformado";
 }
 function irParaLoginEmpresa() {
-  paginaAtual.value = "LoginEmpresa";
+  paginaAtual.value = "loginempresa";
 }
 function irParaHome() {
-  paginaAtual.value = "Home";
-}
-function irParaUsuario() {
-  paginaAtual.value = "Usuario";
-}
-function irParaUsuario2() {
-  paginaAtual.value = "Usuario2";
+  paginaAtual.value = "home";
 }
 function irParaBusca() {
-  paginaAtual.value = "Busca";
+  paginaAtual.value = "busca";
 }
 function irParaHabilidadesNecessarias() {
-  paginaAtual.value = "HabilidadesNecessarias";
+  paginaAtual.value = "habilidadesnecessarias";
+}
+function irParaSelecaoDeCandidatos() {
+  paginaAtual.value = "selecaodecandidatos";
+}
+function irParaUsuario() {
+  paginaAtual.value = "usuario";
+}
+function irParaComunicacaoComCandidatos() {
+  paginaAtual.value = "comunicacaocomcandidatos";
+}
+function irParaComunicacaoComEmpresas() {
+  paginaAtual.value = "comunicacaocomempresas";
 }
 </script>
 
 <template>
-  <div class="background">
-    <div class="degrade-top"></div>
-    <div class="lado-esquerdo"></div>
-    <div class="lado-direito"></div>
     <main class="mainpage">
     <header>
   <ul>
     <li><a href=""><p>Vagas</p></a></li>
     <li><a href=""><p>Empresas</p></a></li>
-    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)">
+    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa' , 'irParaCriarEmpresas' , 'irParaCriarFormado'].includes(paginaAtual)">
       <button @click="irParaLogin">Login</button>
     </li>
     <li v-else>
-      <img src="../public/imagens/flame.png" alt="flame.png">
+      <img src="../public/imagens/flame.png" alt="flame.png" @click="irParaUsuario">
     </li>
   </ul>
   <div
-    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa'].includes(paginaAtual)"
+    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa', 'irParaCriarEmpresas' , 'irParaCriarFormado'].includes(paginaAtual)"
   >
     <input type="text" placeholder="Buscar..." />
     <button>
@@ -60,7 +63,12 @@ function irParaHabilidadesNecessarias() {
     </button>
   </div>
 </header>
+<div class="background">
+    <div class="degrade-top"></div>
+    <div class="lado-esquerdo"></div>
+    <div class="lado-direito"></div>
     <div v-if="paginaAtual === 'home'">
+
     <section class="hero">
       <p>
         Oi, somos o projeto IMT, um site com o proposito de apoiar ao egressados na sua procura no ambito laboral e
@@ -74,15 +82,17 @@ function irParaHabilidadesNecessarias() {
       <button @click="irParaCriarEmpresas">
           Empresa
       </button>
-      <p>
-        Ou
-      </p>
+      <h6>
+        ou
+      </h6>
       <button @click="irParaCriarFormado">
       Formado
       </button>
       </div>
       <h1>INTRODUÇÃO AO MUNDO DO TRABALHO</h1>
     </section>
+      <div class="degrade-bottom"></div>
+  </div>
     <section>
       <ul>
         <li>
@@ -184,7 +194,7 @@ function irParaHabilidadesNecessarias() {
     </li>
   </ul>
 </div>
-  <button>
+  <button @click="irParaHome">
 Cadastrar
   </button>
 </section>
@@ -216,7 +226,7 @@ Cadastrar
     </div>
     </li>
   </ul>
-  <button>
+  <button @click="irParaHome">
 Cadastrar
   </button>
 </section>
@@ -260,13 +270,359 @@ Cadastrar
     login
   </button>
 </section>
-<section v-if="paginaAtual === 'Home'" id="">
+<section v-if="paginaAtual === 'Home'" id="HomeSection">
+<div>
+  <input type="text" placeholder="Criar uma publicação">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <img src="../public/imagens/flame5.png" alt="flame5.png">
+</div>
+<div>
+<ul>
+  <li>
+  <img src="../public/imagens/flame2.png" alt="flame2.png">
+  <h2>Empresa tal</h2>
+  </li>
+  <li>
+    <p>
+    Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo mundo que precisava de um pouco de paz acabava encontrando o lugar.
+    </p>
+  </li>
+  <li>
+    <p>
+      Horarios
+    </p>
+    </li>
+    <li>
+      <p>
+        Salario
+      </p>
+    </li>
+    <li>
+      <p>
+        Localização
+      </p>
+    </li>
+    <li>
+      <p>
+        Demais informações
+      </p>
+    </li>
+</ul>
+<ul>
+  <li>
+    <img src="../public/imagens/flame2.png" alt="flame2.png">
+    <h2>Empresa tal</h2>
+  </li>
+  <li>
+    <p>
+      Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo mundo que precisava de um pouco de paz acabava encontrando o lugar.
+    </p>
+  </li>
+  <li>
+    <p>
+      Horarios
+    </p>
+  </li>
+  <li>
+    <p>
+      Salario
+    </p>
+  </li>
+  <li>
+    <p>
+      Localização
+    </p>
+  </li>
+  <li>
+    <p>
+      Demais informações
+    </p>
+    </li>
+</ul>
+</div>
+<div>
+  <ul>
+    <li>
+      <img src="../public/imagens/flame.png" alt="flame.png">
+    </li>
+    <li>
+      Nome: ******
+      Especialização: ******
+      Localidade: ******
+      Local de Estudos: *******
+    </li>
+    <li>
+      <p>
+        Notificações
+      </p>
+      <img src="../public/imagens/flame4.png" alt="flame4.png">
+    </li>
+    <li>
+      <p>
+        Curriculum
+      </p>
+      <img src="../public/imagens/flame3.png" alt="flame3.png">
+    </li>
+  </ul>
+</div>
+</section>
+<section  v-if="paginaAtual === 'irParaBusca'" id="irParaBuscaSection">
+<div>
+  <ul>
+    <li>
+      <img src="../public/imagens/flame2.png" alt="flame2.png">
+      <h2>
+        Empresa Salario
+      </h2>
+      <p>
+        Precisamos estagiario de desenvolvedor em java
+      </p>
+    </li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li>
+      <img src="../public/imagens/flame2.png" alt="flame2.png">
+      <h2>
+        Empresa Salario
+      </h2>
+    </li>
+    <li>
+      <p>
+        Lá dentro, o tempo parecia andar devagar. As paredes estavam cobertas de livros esquecidos, e cada mesa tinha uma vela que só acendia quando alguém sentava com o coração aberto
+      </p>
+    </li>
+    <li>
+      <button @click="irParaHabilidadesNecessarias">
+        Habilidades necessarias
+      </button>
+    </li>
+    <li>
+      <p>
+        Horário:****************
+        Salario:*********
+        Modalidade:****************
+        Localização:******************
+      </p>
+    </li>
+    <li>
+      <p>
+        Lá dentro, o tempo parecia andar devagar. As paredes estavam cobertas de livros esquecidos, e cada mesa tinha uma vela que só acendia quando alguém sentava com o coração aberto
+      </p>
+    </li>
+    <li>
+      <button>
+        Candidatar-se
+      </button>
+    </li>
+    <li>
+      <button>
+        Enviar curriculum
+      </button>
+    </li>
+  </ul>
+</div>
+</section>
+<section v-if="paginaAtual === 'irParaHabilidadesNecessarias'" id="irParaHabilidadesNecessariasSection">
+<ul>
+  <li>
+    <img src="../public/imagens/flame1.png" alt="flame1.png">
+    <h2>
+      Habilidades que voce possui e são requeridas para o cargo
+    </h2>
+  </li>
+  <li>
+    <button>
+      Habilidades
+    </button>
+  </li>
+  <li>
+    <button>
+      Habilidades
+    </button>
+  </li>
+  <li>
+    <button>
+      Habilidades
+    </button>
+  </li>
+  <li>
+    <h2>
+      Habilidades que voce não possui e são requeridas para o cargo
+    </h2>
+  </li>
+  <li>
+    <button>
+      Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png">
+    </button>
+  </li>
+  <li>
+    <button>
+      Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png">
+    </button>
+  </li>
+  <li>
+    <button>
+      Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png">
+    </button>
+  </li>
+  <li>
+    <button>
+      Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png">
+    </button>
+  </li>
+</ul>
+</section>
+<section v-if="paginaAtual === 'irParaUsuario'" id="irParaUsuarioSection">
+<button>
+  Agregar habilidades <img src="../public/imagens/flame5.png" alt="flame5.png">
+</button>
+<div>
+    <h1>
+      Voce possui alguma condição física ou mental?
+    </h1>
+    <p>
+      Se sim, por favor anexe o documento comprovante
+    </p>
+    <button>
+      Documento Anexado
+    </button>
+    <div>
+      <button>
+        Anexar
+      </button>
+      <button>
+        Não possuo
+      </button>
+      <button>
+        Atualizar
+      </button>
+    </div>
+  </div>
+  <div>
+    <h1>
+      Voce possui algum certificado ou diploma?
+    </h1>
+    <p>
+      Se sim, por favor anexe o documento comprovante, deve possuir codigo QR e conter suas informações pessoais e da instituição na qual se formou, além da carga horária.
+    </p>
+    <button>
+      documento Anexado
+    </button>
+    <div>
+      <button>
+        Anexar
+      </button>
+      <button>
+        Não possuo
+      </button>
+      <button>
+        Atualizar
+      </button>
+    </div>
+  </div>
+    Localidade <img src="../public/imagens/flame5.png" alt="flame5.png">
+    <div>
+      <h1>
+        Qual seria seu lugar de trabalho?
+      </h1>
+      <div>
+        <button>
+          Empresa
+        </button>
+        <button>
+          Remoto
+        </button>
+        <button>
+          Integral
+        </button>
+      </div>
+    </div>
+    <div>
+      <h1>
+        Voce possui algum certificado ou diploma?
+      </h1>
+      <p>
+        Se sim, por favor anexe o documento comprovante, deve possuir codigo QR e conter suas informações pessoais e da instituição na qual se formou, além da carga horária.
+      </p>
+      <button>
+        Documento Anexado**
+      </button>
+      <div>
+        <button>
+          Anexar
+        </button>
+        <button>
+          Não possuo
+        </button>
+        <button>
+          Atualizar
+        </button>
+      </div>
+    </div>
+</section>
+<section v-if="paginaAtual === 'irParaSelecaodecandidatos'" id="irParaSelecaodecandidatosSection">
+<ul>
+  <li>
+    <img src="../public/imagens/flame2.png" alt="flame2.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+  <li>
+    <img src="../public/imagens/flame2.png" alt="flame2.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+  <li>
+    <img src="../public/imagens/flame2.png" alt="flame2.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+  <li>
+    <img src="../public/imagens/flame2.png" alt="flame2.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+</ul>
 
 </section>
-
   </main>
-  <div class="degrade-bottom"></div>
-  </div>
+
   <footer>
     <img src="../public/imagens/Captura de tela de 2025-07-04 13-40-50-Photoroom 1.png"
       alt="Captura de tela de 2025-07-04 13-40-50-Photoroom.png">
@@ -309,27 +665,33 @@ Cadastrar
 </template>
 <style scoped>
 /*==============================================
-                  background
+                    BACKGROUND
 ===============================================*/
 .background {
-  background:rgb(5, 5, 19);
+  background: rgb(5, 5, 19);
   display: flex;
+  flex-wrap: wrap;
   height: 100vh;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
+
 .degrade-top,
 .degrade-bottom {
   position: absolute;
   left: 0;
   width: 100%;
   height: 150px;
-  z-index: 5;
   pointer-events: none;
+  z-index: 1;
 }
+
 .degrade-top {
   top: 0;
   background: linear-gradient(to bottom, #0d0d36, rgba(8, 8, 30, 0));
-  z-index: 1;
 }
 
 .degrade-bottom {
@@ -337,37 +699,40 @@ Cadastrar
   background: linear-gradient(to top, #0d0d36, rgba(8, 8, 30, 0));
 }
 
-.lado-esquerdo {
+.lado-esquerdo,
+.lado-direito {
   width: 50%;
+  height: 100%;
   background: conic-gradient(from 90deg at 50% 80%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
-  height: 100%;
 }
 
 .lado-direito {
-  width: 50%;
-  background: conic-gradient(from 90deg at 50% 80%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
-  mix-blend-mode: color-dodge;
-  height: 100%;
   transform: scaleX(-1);
 }
-/*============================================================
-                            HEADER
-============================================================*/
+
+/*==============================================
+                    HEADER
+===============================================*/
 header {
   display: flex;
+  justify-content: space-between; /* Menu à esquerda, busca à direita */
   align-items: center;
-  justify-content: space-between;
-  margin: 20px 5%;
-  position: relative;
+  padding: 40px 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 2;
 }
 
 header ul {
   display: flex;
   gap: 40px;
-  align-items: center;
   list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 header ul li a {
@@ -391,38 +756,61 @@ header ul li button:hover {
   background: #b1b1b1;
 }
 
-/*======================================
-                MAIN
-=======================================*/
-.mainpage {
-  flex: 1;
+header .busca {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+header .busca input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 200px;
+}
+
+header .busca button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  color: #0c0c0c;
+  transition: background 0.3s;
+}
+
+header .busca button:hover {
+  background: #b1b1b1;
+}
+
+/*==============================================
+                    HERO
+===============================================*/
+.hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 40px 10%;
-  text-align: center;
-  position: absolute;
-}
-.hero{
   justify-content: center;
   align-items: center;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
 }
+
 .hero p {
   color: #f8f8f8;
-  margin: auto;
+  margin: 100px auto 10px auto;
   line-height: 1.6;
   max-width: 800px;
 }
-.hero{
-  justify-content: center;
-  align-items: center;
-}
+
 .hero h1 {
-  font-size: 3rem;
+  font-size: 5rem;
   color: #b1b1b1;
-  margin: 40px 0;
+  margin: 100px 0;
   mix-blend-mode: color-dodge;
 }
+
 .escolha {
   display: flex;
   align-items: center;
@@ -430,7 +818,9 @@ header ul li button:hover {
   gap: 20px;
 }
 
-/* Botões gerais */
+/*==============================================
+                    BUTTONS
+===============================================*/
 button {
   padding: 10px 25px;
   border-radius: 25px;
@@ -447,7 +837,9 @@ button:hover {
   background: #b1b1b1;
 }
 
-/* Inputs */
+/*==============================================
+                    INPUTS
+===============================================*/
 input {
   padding: 10px 15px;
   border-radius: 8px;
@@ -458,9 +850,9 @@ input {
   max-width: 300px;
 }
 
-/*=================================
-                FOOTER
-=================================*/
+/*==============================================
+                    FOOTER
+===============================================*/
 footer {
   background: #0d0d36;
   padding: 20px 5%;
@@ -469,6 +861,7 @@ footer {
   align-items: center;
   gap: 15px;
   text-align: center;
+  color: aliceblue;
 }
 
 footer ul {
@@ -476,6 +869,7 @@ footer ul {
   gap: 20px;
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 footer a {
@@ -499,63 +893,4 @@ footer svg:hover {
   fill: #b1b1b1;
 }
 
-button:hover {
-  background: #b1b1b1;
-}
-
-/* Inputs */
-input {
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  margin: 10px 0;
-  width: 100%;
-  max-width: 300px;
-}
-
-/*=================================
-                FOOTER
-=================================*/
-footer {
-  background: #0d0d36;
-  padding: 20px 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  text-align: center;
-}
-
-footer ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-}
-
-footer a {
-  color: aliceblue;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: #b1b1b1;
-}
-
-footer svg {
-  width: 24px;
-  height: 24px;
-  fill: aliceblue;
-  transition: fill 0.3s;
-}
-
-footer svg:hover {
-  fill: #b1b1b1;
-}
-
-footer p {
-  color: #b1b1b1;
-  font-size: 0.9rem;
-}
+</style>
