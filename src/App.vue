@@ -32,6 +32,16 @@ function irParaSelecaodecandidatos() {
 function irParaUsuario() {
   paginaAtual.value = "Usuario";
 }
+function irParaSelecaodecandidatos() {
+  paginaAtual.value = "Usuario";
+}
+function irParaComunicacaocomcandidatos() {
+  paginaAtual.value = "Usuario";
+}
+function irParaComunicacaocomempresas() {
+  paginaAtual.value = "Usuario";
+}
+
 </script>
 
 <template>
@@ -275,7 +285,7 @@ Cadastrar
   <li>
     <p>
     Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo mundo que precisava de um pouco de paz acabava encontrando o lugar.
-    </p> 
+    </p>
   </li>
   <li>
     <p>
@@ -306,7 +316,7 @@ Cadastrar
   <li>
     <p>
       Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo mundo que precisava de um pouco de paz acabava encontrando o lugar.
-    </p> 
+    </p>
   </li>
   <li>
     <p>
@@ -384,7 +394,7 @@ Cadastrar
       </p>
     </li>
     <li>
-      <button>
+      <button @click="irParaHabilidadesNecessarias">
         Habilidades necessarias
       </button>
     </li>
@@ -463,6 +473,97 @@ Cadastrar
     </button>
   </li>
 </ul>
+</section>
+<section v-if="paginaAtual === 'irParaUsuario'" id="irParaUsuarioSection">
+<button>
+  Agregar habilidades <img src="../public/imagens/flame5.png" alt="flame5.png">
+</button>
+<div>
+    <h1>
+      Voce possui alguma condição física ou mental?
+    </h1>
+    <p>
+      Se sim, por favor anexe o documento comprovante
+    </p>
+    <button>
+      Documento Anexado
+    </button>
+    <div>
+      <button>
+        Anexar
+      </button>
+      <button>
+        Não possuo
+      </button>
+      <button>
+        Atualizar
+      </button>
+    </div>
+  </div>
+  <div>
+    <h1>
+      Voce possui algum certificado ou diploma?
+    </h1>
+    <p>
+      Se sim, por favor anexe o documento comprovante, deve possuir codigo QR e conter suas informações pessoais e da instituição na qual se formou, além da carga horária.
+    </p>
+    <button>
+      documento Anexado
+    </button>
+    <div>
+      <button>
+        Anexar
+      </button>
+      <button>
+        Não possuo
+      </button>
+      <button>
+        Atualizar
+      </button>
+    </div>
+  </div>
+    Localidade <img src="../public/imagens/flame5.png" alt="flame5.png">
+    <div>
+      <h1>
+        Qual seria seu lugar de trabalho?
+      </h1>
+      <div>
+        <button>
+          Empresa
+        </button>
+        <button>
+          Remoto
+        </button>
+        <button>
+          Integral
+        </button>
+      </div>
+    </div>
+    <div>
+      <h1>
+        Voce possui algum certificado ou diploma?
+      </h1>
+      <p>
+        Se sim, por favor anexe o documento comprovante, deve possuir codigo QR e conter suas informações pessoais e da instituição na qual se formou, além da carga horária.
+      </p>
+      <button>
+        Documento Anexado**
+      </button>
+      <div>
+        <button>
+          Anexar
+        </button>
+        <button>
+          Não possuo
+        </button>
+        <button>
+          Atualizar
+        </button>
+      </div>
+    </div>
+</section>
+<section v-if="paginaAtual === 'irParaSelecaodecandidatos'" id="irParaSelecaodecandidatosSection">
+
 </section>
   </main>
   <div class="degrade-bottom"></div>
