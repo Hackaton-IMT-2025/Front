@@ -1,47 +1,44 @@
 <script setup>
 import { ref } from 'vue';
+
 const paginaAtual = ref("home");
 
 function irParaLogin() {
   paginaAtual.value = "login";
 }
 function irParaCriarEmpresas() {
-  paginaAtual.value = "criarEmpresas";
+  paginaAtual.value = "criarempresas";
 }
 function irParaCriarFormado() {
-  paginaAtual.value = "criarFormado";
+  paginaAtual.value = "criarformado";
 }
 function irParaLoginFormado() {
-  paginaAtual.value = "LoginFormado";
+  paginaAtual.value = "loginformado";
 }
 function irParaLoginEmpresa() {
-  paginaAtual.value = "LoginEmpresa";
+  paginaAtual.value = "loginempresa";
 }
 function irParaHome() {
-  paginaAtual.value = "Home";
+  paginaAtual.value = "home";
 }
 function irParaBusca() {
-  paginaAtual.value = "Busca";
+  paginaAtual.value = "busca";
 }
 function irParaHabilidadesNecessarias() {
-  paginaAtual.value = "HabilidadesNecessarias";
+  paginaAtual.value = "habilidadesnecessarias";
 }
-function irParaSelecaodecandidatos() {
-  paginaAtual.value = "Selecaodecandidatos";
+function irParaSelecaoDeCandidatos() {
+  paginaAtual.value = "selecaodecandidatos";
 }
 function irParaUsuario() {
-  paginaAtual.value = "Usuario";
+  paginaAtual.value = "usuario";
 }
-function irParaSelecaodecandidatos() {
-  paginaAtual.value = "Usuario";
+function irParaComunicacaoComCandidatos() {
+  paginaAtual.value = "comunicacaocomcandidatos";
 }
-function irParaComunicacaocomcandidatos() {
-  paginaAtual.value = "Usuario";
+function irParaComunicacaoComEmpresas() {
+  paginaAtual.value = "comunicacaocomempresas";
 }
-function irParaComunicacaocomempresas() {
-  paginaAtual.value = "Usuario";
-}
-
 </script>
 
 <template>
@@ -58,7 +55,7 @@ function irParaComunicacaocomempresas() {
       <button @click="irParaLogin">Login</button>
     </li>
     <li v-else>
-      <img src="../public/imagens/flame.png" alt="flame.png">
+      <img src="../public/imagens/flame.png" alt="flame.png" @click="irParaUsuario">
     </li>
   </ul>
   <div
@@ -563,6 +560,62 @@ Cadastrar
     </div>
 </section>
 <section v-if="paginaAtual === 'irParaSelecaodecandidatos'" id="irParaSelecaodecandidatosSection">
+<ul>
+  <li>
+    <img src="../public/imagens/flame2.png" alt="flame2.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+  <li>
+    <img src="../public/imagens/flame2.png" alt="flame2.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+  <li>
+    <img src="../public/imagens/flame2.png" alt="flame2.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+  <li>
+    <img src="../public/imagens/flame2.png" alt="flame2.png">
+    <h1>
+      Nome
+    </h1>
+    <button>
+      Mostrar informações
+    </button>
+  </li>
+</ul>
 
 </section>
   </main>
