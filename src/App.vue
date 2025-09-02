@@ -1,46 +1,44 @@
 <script setup>
 import { ref } from 'vue';
-
 const paginaAtual = ref("home");
 
 function irParaLogin() {
   paginaAtual.value = "login";
 }
 function irParaCriarEmpresas() {
-  paginaAtual.value = "criarempresas";
+  paginaAtual.value = "criarEmpresas";
 }
 function irParaCriarFormado() {
-  paginaAtual.value = "criarformado";
+  paginaAtual.value = "criarFormado";
 }
 function irParaLoginFormado() {
-  paginaAtual.value = "loginformado";
+  paginaAtual.value = "LoginFormado";
 }
 function irParaLoginEmpresa() {
-  paginaAtual.value = "loginempresa";
+  paginaAtual.value = "LoginEmpresa";
 }
 function irParaHome() {
-  paginaAtual.value = "home";
+  paginaAtual.value = "Home";
 }
 function irParaBusca() {
-  paginaAtual.value = "busca";
+  paginaAtual.value = "Busca";
 }
 function irParaHabilidadesNecessarias() {
-  paginaAtual.value = "habilidadesnecessarias";
+  paginaAtual.value = "HabilidadesNecessarias";
 }
-function irParaSelecaoDeCandidatos() {
-  paginaAtual.value = "selecaodecandidatos";
+function irParaSelecaodecandidatos() {
+  paginaAtual.value = "Selecaodecandidatos";
 }
 function irParaUsuario() {
-  paginaAtual.value = "usuario";
+  paginaAtual.value = "Usuario";
 }
-function irParaComunicacaoComCandidatos() {
-  paginaAtual.value = "comunicacaocomcandidatos";
+function irParaComunicacaocomcandidatos() {
+  paginaAtual.value = "Comunicacaocomcandidatos";
 }
-function irParaComunicacaoComEmpresas() {
-  paginaAtual.value = "comunicacaocomempresas";
+function irParaComunicacaocomempresas() {
+  paginaAtual.value = "Comunicacaocomempresas";
 }
 </script>
-
 <template>
   <div class="background">
     <div class="degrade-top"></div>
@@ -49,13 +47,14 @@ function irParaComunicacaoComEmpresas() {
     <main class="mainpage">
     <header>
   <ul>
+    <li><img src="../public/imagens/Logo-Photoroom 1.png" alt="Logo-Photoroom 1.png"></li>
     <li><a href=""><p>Vagas</p></a></li>
     <li><a href=""><p>Empresas</p></a></li>
     <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa' , 'irParaCriarEmpresas' , 'irParaCriarFormado'].includes(paginaAtual)">
       <button @click="irParaLogin">Login</button>
     </li>
     <li v-else>
-      <img src="../public/imagens/flame.png" alt="flame.png" @click="irParaUsuario">
+      <img src="../public/imagens/flame.png" alt="flame.png">
     </li>
   </ul>
   <div
@@ -616,7 +615,118 @@ Cadastrar
     </button>
   </li>
 </ul>
-
+<button>
+  Enviar solicitudes aprovadas <img src="../public/imagens/flame9.png" alt="flame9.png">
+</button>
+<button>
+  Eliminar solicitudes <img src="../public/imagens/flame8.png" alt="flame8.png">
+</button>
+</section>
+<section v-if="paginaAtual === 'irParaComunicacaocomcandidatos'" id="irParaComunicacaocomcandidatosSection">
+  <div>
+<ul>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição do cara
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição do cara
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição do cara
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+</ul>
+</div>
+<div>
+  <h1>
+    Aos candidatos seleccionados voce pode enviar o seguinte mensagem:
+  </h1>
+  <p>
+    Voce terá uma entrevista conosco!
+    Esperamos voce na data ******* as ***** horas
+    Localização: *********************
+    Por favor trouza sua documentação impressa com você
+  </p>
+  <p>
+    Você foi para segunda etapa!
+  A segunda etapa foi começada, agora voce terá que esperar enquanto nossa equipe avalia sua informação e documentos, entraremos em contacto com você.
+  </p>
+  <p>
+    Mensagem personalizada
+  </p>
+</div>
+</section>
+<section v-if="paginaAtual === 'irParaComunicacaocomempresas'" id="irParaComunicacaocomempresasSection">
+  <div>
+<ul>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição da empresa
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição da empresa
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição da empresa
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+</ul>
+</div>
+<div>
+  <h1>
+    Voce pode mandar mensagens a(as) empresas seleccionados:
+  </h1>
+  <p>
+    Confirmo minha presença na empresa ********** na data ********, as **** horas, para a entrevista presencial
+    Atentamente ************
+  </p>
+  <p>
+    Mando o comunicado informando que não vou comparecer na entrevista, obrigada pela oportunidade e sorte na procura de funcionarios.
+    Atentamente ************
+  </p>
+  <p>
+    Mensagem personalizada
+  </p>
+</div>
 </section>
   </main>
   <div class="degrade-bottom"></div>
