@@ -1,49 +1,48 @@
 <script setup>
 import { ref } from 'vue';
-
 const paginaAtual = ref("home");
 
 function irParaLogin() {
   paginaAtual.value = "login";
 }
 function irParaCriarEmpresas() {
-  paginaAtual.value = "criarempresas";
+  paginaAtual.value = "criarEmpresas";
 }
 function irParaCriarFormado() {
-  paginaAtual.value = "criarformado";
+  paginaAtual.value = "criarFormado";
 }
 function irParaLoginFormado() {
-  paginaAtual.value = "loginformado";
+  paginaAtual.value = "LoginFormado";
 }
 function irParaLoginEmpresa() {
-  paginaAtual.value = "loginempresa";
+  paginaAtual.value = "LoginEmpresa";
 }
 function irParaHome() {
-  paginaAtual.value = "home";
+  paginaAtual.value = "Home";
 }
 function irParaBusca() {
-  paginaAtual.value = "busca";
+  paginaAtual.value = "Busca";
 }
 function irParaHabilidadesNecessarias() {
-  paginaAtual.value = "habilidadesnecessarias";
+  paginaAtual.value = "HabilidadesNecessarias";
 }
-function irParaSelecaoDeCandidatos() {
-  paginaAtual.value = "selecaodecandidatos";
+function irParaSelecaodecandidatos() {
+  paginaAtual.value = "Selecaodecandidatos";
 }
 function irParaUsuario() {
-  paginaAtual.value = "usuario";
+  paginaAtual.value = "Usuario";
 }
-function irParaComunicacaoComCandidatos() {
-  paginaAtual.value = "comunicacaocomcandidatos";
+function irParaComunicacaocomcandidatos() {
+  paginaAtual.value = "Comunicacaocomcandidatos";
 }
-function irParaComunicacaoComEmpresas() {
-  paginaAtual.value = "comunicacaocomempresas";
+function irParaComunicacaocomempresas() {
+  paginaAtual.value = "Comunicacaocomempresas";
 }
 </script>
-
 <template>
     <main class="mainpage">
     <header>
+      <img src="../public/imagens/Logo-Photoroom 1.png" alt="Logo-Photoroom 1.png">
   <ul>
     <li><a href=""><p>Vagas</p></a></li>
     <li><a href=""><p>Empresas</p></a></li>
@@ -51,7 +50,7 @@ function irParaComunicacaoComEmpresas() {
       <button @click="irParaLogin">Login</button>
     </li>
     <li v-else>
-      <img src="../public/imagens/flame.png" alt="flame.png" @click="irParaUsuario">
+      <img src="../public/imagens/flame.png" alt="flame.png">
     </li>
   </ul>
   <div
@@ -63,14 +62,13 @@ function irParaComunicacaoComEmpresas() {
     </button>
   </div>
 </header>
-<div class="background">
+    <div v-if="paginaAtual === 'home'">
+      <div class="background">
     <div class="degrade-top"></div>
     <div class="lado-esquerdo"></div>
     <div class="lado-direito"></div>
-    <div v-if="paginaAtual === 'home'">
-
     <section class="hero">
-      <p>
+      <p class="oi">
         Oi, somos o projeto IMT, um site com o proposito de apoiar ao egressados na sua procura no ambito laboral e
         empresas na busqueda de trabalhadores de qualidade, se tua empresa está procurando vacantes ou voce é um
         egressado que comecou no mundo do trabalho, faça o login e os ajudaremos na sua procura.
@@ -82,18 +80,28 @@ function irParaComunicacaoComEmpresas() {
       <button @click="irParaCriarEmpresas">
           Empresa
       </button>
-      <h6>
-        ou
-      </h6>
+      <p>
+        Ou
+      </p>
       <button @click="irParaCriarFormado">
       Formado
       </button>
       </div>
       <h1>INTRODUÇÃO AO MUNDO DO TRABALHO</h1>
     </section>
-      <div class="degrade-bottom"></div>
+    <div class="degrade-bottom"></div>
   </div>
-    <section>
+  <div class="background">
+    <div class="degrade-top"></div>
+    <div class="lado-esquerdo"></div>
+    <div class="lado-direito"></div>
+    <section class="nonosso">
+      <p>
+        No nosso site, a segurança dos seus dados pessoais é nossa prioridade. Utilizamos tecnologia de ponta para
+        proteger suas informações contra acessos não autorizados. Cada passo é cuidadosamente monitorado, garantindo que
+        sua privacidade seja sempre respeitada. Confie em nós para proporcionar uma experiência online segura e
+        tranquila. Aqui, seu bem-estar digital é o nosso compromisso!
+      </p>
       <ul>
         <li>
           <p>
@@ -112,14 +120,8 @@ function irParaComunicacaoComEmpresas() {
         </li>
       </ul>
     </section>
-    <section>
-      <p>
-        No nosso site, a segurança dos seus dados pessoais é nossa prioridade. Utilizamos tecnologia de ponta para
-        proteger suas informações contra acessos não autorizados. Cada passo é cuidadosamente monitorado, garantindo que
-        sua privacidade seja sempre respeitada. Confie em nós para proporcionar uma experiência online segura e
-        tranquila. Aqui, seu bem-estar digital é o nosso compromisso!
-      </p>
-    </section>
+    <div class="degrade-bottom"></div>
+  </div>
     <section>
       <p>
         Conectar-se com pessoas que podem ajudar é vital no ambiente laboral. Cada relacionamento é uma oportunidade de
@@ -619,13 +621,122 @@ Cadastrar
     </button>
   </li>
 </ul>
-
+<button>
+  Enviar solicitudes aprovadas <img src="../public/imagens/flame9.png" alt="flame9.png">
+</button>
+<button>
+  Eliminar solicitudes <img src="../public/imagens/flame8.png" alt="flame8.png">
+</button>
+</section>
+<section v-if="paginaAtual === 'irParaComunicacaocomcandidatos'" id="irParaComunicacaocomcandidatosSection">
+  <div>
+<ul>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição do cara
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição do cara
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição do cara
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+</ul>
+</div>
+<div>
+  <h1>
+    Aos candidatos seleccionados voce pode enviar o seguinte mensagem:
+  </h1>
+  <p>
+    Voce terá uma entrevista conosco!
+    Esperamos voce na data ******* as ***** horas
+    Localização: *********************
+    Por favor trouza sua documentação impressa com você
+  </p>
+  <p>
+    Você foi para segunda etapa!
+  A segunda etapa foi começada, agora voce terá que esperar enquanto nossa equipe avalia sua informação e documentos, entraremos em contacto com você.
+  </p>
+  <p>
+    Mensagem personalizada
+  </p>
+</div>
+</section>
+<section v-if="paginaAtual === 'irParaComunicacaocomempresas'" id="irParaComunicacaocomempresasSection">
+  <div>
+<ul>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição da empresa
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição da empresa
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+  <li>
+    <img src="../public/imagens/flame7.png" alt="flame7.png">
+    <h1>
+      Nome
+    </h1>
+    <p>
+      Descrição da empresa
+    </p>
+    <img src="../public/imagens/flame10.png" alt="flame10.png">
+  </li>
+</ul>
+</div>
+<div>
+  <h1>
+    Voce pode mandar mensagens a(as) empresas seleccionados:
+  </h1>
+  <p>
+    Confirmo minha presença na empresa ********** na data ********, as **** horas, para a entrevista presencial
+    Atentamente ************
+  </p>
+  <p>
+    Mando o comunicado informando que não vou comparecer na entrevista, obrigada pela oportunidade e sorte na procura de funcionarios.
+    Atentamente ************
+  </p>
+  <p>
+    Mensagem personalizada
+  </p>
+</div>
 </section>
   </main>
-
   <footer>
-    <img src="../public/imagens/Captura de tela de 2025-07-04 13-40-50-Photoroom 1.png"
-      alt="Captura de tela de 2025-07-04 13-40-50-Photoroom.png">
+    <img src="../public/imagens/Logo-Photoroom 1.png" alt="Logo-Photoroom 1.png">
     <ul>
       <li>
         <p>
@@ -665,33 +776,28 @@ Cadastrar
 </template>
 <style scoped>
 /*==============================================
-                    BACKGROUND
+                  background
 ===============================================*/
 .background {
-  background: rgb(5, 5, 19);
+  background:rgb(5, 5, 19);
   display: flex;
-  flex-wrap: wrap;
   height: 100vh;
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
+  position: relative;
 }
-
 .degrade-top,
 .degrade-bottom {
   position: absolute;
   left: 0;
   width: 100%;
   height: 150px;
+  z-index: 5;
   pointer-events: none;
-  z-index: 1;
 }
-
 .degrade-top {
   top: 0;
   background: linear-gradient(to bottom, #0d0d36, rgba(8, 8, 30, 0));
+  z-index: 1;
 }
 
 .degrade-bottom {
@@ -699,160 +805,188 @@ Cadastrar
   background: linear-gradient(to top, #0d0d36, rgba(8, 8, 30, 0));
 }
 
-.lado-esquerdo,
+.lado-esquerdo {
+  width: 50%;
+  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
+  mix-blend-mode: color-dodge;
+  height: 100%;
+}
+
 .lado-direito {
   width: 50%;
-  height: 100%;
-  background: conic-gradient(from 90deg at 50% 80%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
-}
-
-.lado-direito {
+  height: 100%;
   transform: scaleX(-1);
 }
-
-/*==============================================
-                    HEADER
-===============================================*/
+/*==========================
+         HEADER
+===========================*/
 header {
   display: flex;
-  justify-content: space-between; /* Menu à esquerda, busca à direita */
+  justify-content: space-between;
   align-items: center;
-  padding: 40px 80px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 2;
+  right: 0;
+  height: 80px;
+  padding: 0 40px;
+  z-index: 10;
+  margin: 50px;
+}
+
+header img {
+  height: 100px;
+  object-fit: contain;
 }
 
 header ul {
   display: flex;
-  gap: 40px;
-  list-style: none;
   align-items: center;
+  gap: 100px;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-header ul li a {
+header ul li {
+  display: flex;
+  align-items: center;
+}
+
+header ul li a,
+header ul li p {
   text-decoration: none;
-  color: aliceblue;
+  color: #fff;
   font-weight: 500;
+  font-size: 23px;
+  transition: color 0.3s ease;
+  font-family: poppins;
+}
+
+header ul li a:hover,
+header ul li p:hover {
+  color: #b1b1b1;
+  cursor: pointer;
 }
 
 header ul li button {
   background: #fff;
   color: #0c0c0c;
-  padding: 8px 20px;
+  padding: 12px 23px;
   border: none;
-  border-radius: 20px;
+  border-radius: 100px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
+  font-size: 18px;
+  font-family: poppins;
 }
 
 header ul li button:hover {
   background: #b1b1b1;
+  color: #000;
 }
 
-header .busca {
+header > div {
   display: flex;
+  align-items: center;
   gap: 10px;
-  align-items: center;
 }
 
-header .busca input {
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  width: 200px;
+header button i {
+  color: white;
+  font-size: 16px;
 }
 
-header .busca button {
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  background: #fff;
-  color: #0c0c0c;
-  transition: background 0.3s;
-}
 
-header .busca button:hover {
-  background: #b1b1b1;
+/*=============================
+         HERO (main)
+==============================*/
+.mainpage{
+  justify-items: center;
 }
-
-/*==============================================
-                    HERO
-===============================================*/
 .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   position: absolute;
-  z-index: 10;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  margin: 180px 50px;
 }
 
-.hero p {
-  color: #f8f8f8;
-  margin: 100px auto 10px auto;
+.hero p.oi {
   line-height: 1.6;
-  max-width: 800px;
+  color: #ddd;
+  margin: 20px 520px;
 }
 
 .hero h1 {
-  font-size: 5rem;
-  color: #b1b1b1;
-  margin: 100px 0;
+  font-size: 6rem;
+  color: #B1B1B1;
+  font-weight: bold;
+  margin: auto 200px;
   mix-blend-mode: color-dodge;
+  font-family: Annapurna SIL;
+  line-height: 1.4;
 }
 
+/*=============================
+        ESCOLHA (botões)
+==============================*/
 .escolha {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
+  margin: 30px 0;
 }
 
-/*==============================================
-                    BUTTONS
-===============================================*/
-button {
-  padding: 10px 25px;
-  border-radius: 25px;
+.escolha button {
+  padding: 12px 28px;
   border: none;
-  margin: 15px;
-  cursor: pointer;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #0d0d36;
   font-weight: bold;
-  background: #fff;
-  color: #0c0c0c;
-  transition: all 0.3s;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background: #b1b1b1;
+.escolha button:hover {
+  background-color: #d4d4d4;
 }
 
-/*==============================================
-                    INPUTS
-===============================================*/
-input {
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  margin: 10px 0;
-  width: 100%;
-  max-width: 300px;
+/*=============================
+            TEXTOS
+==============================*/
+.hero span,
+.hero small {
+  color: #ccc;
+  font-size: 1rem;
+  margin-top: 10px;
 }
 
-/*==============================================
-                    FOOTER
-===============================================*/
+.hero .ou {
+  margin: 0 10px;
+  color: #aaa;
+}
+/*=============================
+            NO NOSSO
+==============================*/
+.nonosso{
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 200px;
+}
+
+
+/*=================================
+                FOOTER
+=================================*/
 footer {
   background: #0d0d36;
   padding: 20px 5%;
@@ -861,7 +995,6 @@ footer {
   align-items: center;
   gap: 15px;
   text-align: center;
-  color: aliceblue;
 }
 
 footer ul {
@@ -869,7 +1002,7 @@ footer ul {
   gap: 20px;
   list-style: none;
   padding: 0;
-  margin: 0;
+
 }
 
 footer a {
@@ -893,4 +1026,8 @@ footer svg:hover {
   fill: #b1b1b1;
 }
 
+footer p {
+  color: #b1b1b1;
+  font-size: 0.9rem;
+}
 </style>
