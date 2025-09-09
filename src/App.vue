@@ -89,14 +89,14 @@ function irParaComunicacaocomempresas() {
       </div>
       <h1>INTRODUÇÃO AO MUNDO DO TRABALHO</h1>
     </section>
-    <div class="degrade-bottom"></div>
+    <div class="degrade-bottom2"></div>
   </div>
-  <div class="background">
-    <div class="degrade-top"></div>
-    <div class="lado-esquerdo"></div>
-    <div class="lado-direito"></div>
+  <div class="background2">
+    <div class="degrade-top2"></div>
+    <div class="lado-esquerdo2"></div>
+    <div class="lado-direito2"></div>
     <section class="nonosso">
-      <p>
+      <p class="pnonosso">
         No nosso site, a segurança dos seus dados pessoais é nossa prioridade. Utilizamos tecnologia de ponta para
         proteger suas informações contra acessos não autorizados. Cada passo é cuidadosamente monitorado, garantindo que
         sua privacidade seja sempre respeitada. Confie em nós para proporcionar uma experiência online segura e
@@ -120,7 +120,7 @@ function irParaComunicacaocomempresas() {
         </li>
       </ul>
     </section>
-    <div class="degrade-bottom"></div>
+    <div class="degrade-bottom2"></div>
   </div>
     <section>
       <p>
@@ -779,7 +779,7 @@ Cadastrar
                   background
 ===============================================*/
 .background {
-  background:rgb(5, 5, 19);
+  background:#08081E;
   display: flex;
   height: 100vh;
   width: 100%;
@@ -807,14 +807,58 @@ Cadastrar
 
 .lado-esquerdo {
   width: 50%;
-  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #B1B1B1 200deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
 }
 
 .lado-direito {
   width: 50%;
-  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #B1B1B1 170deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #B1B1B1 200deg, #f8f8f8 360deg);
+  mix-blend-mode: color-dodge;
+  height: 100%;
+  transform: scaleX(-1);
+}
+/*==============================================
+                  background2
+===============================================*/
+.background2{
+  background:#08081E;
+  display: flex;
+  height: 85vh;
+  width: 100%;
+  position: relative;
+}
+.degrade-top2,
+.degrade-bottom2 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 5;
+  pointer-events: none;
+}
+.degrade-top2 {
+  top: 0;
+  background: linear-gradient(to bottom, #0d0d36, rgba(8, 8, 30, 0));
+  z-index: 1;
+}
+
+.degrade-bottom2{
+  bottom: 0;
+  background: linear-gradient(to top, #0d0d36, rgba(8, 8, 30, 0));
+}
+
+.lado-esquerdo2 {
+  width: 50%;
+  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #B1B1B1 350deg, #f8f8f8 360deg);
+  mix-blend-mode: color-dodge;
+  height: 100%;
+}
+
+.lado-direito2 {
+  width: 50%;
+  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #B1B1B1 350deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
   transform: scaleX(-1);
@@ -922,7 +966,7 @@ header button i {
 }
 
 .hero h1 {
-  font-size: 6rem;
+  font-size: 5rem;
   color: #B1B1B1;
   font-weight: bold;
   margin: auto 200px;
@@ -981,6 +1025,30 @@ header button i {
   justify-content: center;
   text-align: center;
   margin: 200px;
+}.nonosso ul{
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}.nonosso ul li{
+  padding: 20px;
+ background: linear-gradient(130deg,rgba(255, 255, 255, 0.02)
+   19.68%, rgba(255, 255, 255, 0.10)72.77%);
+   box-shadow: -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08)
+   inset,7px 9px 19.6px 0px rgba (0, 0, 0, 0.20)
+   inset;
+   border-radius: 10px;
+   border: solid 1px rgba(192, 192, 192, 0.233);
+  max-width: 250px;
+  margin: 25px auto;
+  line-height: 1.6;
+  text-align: center;
+
+}.pnonosso{
+  padding:0 350px;
+  line-height: 1.6;
+  margin: 0px 0px 40px 0px;
+
 }
 
 
