@@ -122,20 +122,30 @@ function irParaComunicacaocomempresas() {
     </section>
     <div class="degrade-bottom2"></div>
   </div>
-    <section>
+  <div class="background2">
+    <div class="degrade-top2"></div>
+    <div class="lado-esquerdo2"></div>
+    <div class="lado-direito2"></div>
+    <section class="conectar">
+      <div>
       <p>
         Conectar-se com pessoas que podem ajudar é vital no ambiente laboral. Cada relacionamento é uma oportunidade de
         aprendizado e crescimento. Ao cultivar redes, você não só expande seu conhecimento, mas também encontra apoio e
         inspiração para alcançar seus objetivos profissionais.
       </p>
       <img src="../public/imagens/image 5(1).png" alt="image 5.png">
+      </div>
+      <div>
+      <img src="../public/imagens/image 6(1).png" alt="image 6.png">
       <p>
         Para alcançar o sucesso profissional, é essencial adquirir habilidades específicas por meio de educação contínua
         e capacitação. Dominar conhecimentos técnicos e desenvolver competências interpessoais são passos fundamentais
         para conquistar um posto de destaque no mercado de trabalho.
       </p>
-      <img src="../public/imagens/image 6(1).png" alt="image 6.png">
+      </div>
     </section>
+    <div class="degrade-bottom2"></div>
+  </div>
   </div>
   <section v-if="paginaAtual === 'login'" id="loginFormadoSection">
 
@@ -781,7 +791,7 @@ Cadastrar
 .background {
   background:#08081E;
   display: flex;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   position: relative;
 }
@@ -825,7 +835,43 @@ Cadastrar
 .background2{
   background:#08081E;
   display: flex;
-  height: 85vh;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.degrade-top2,
+.degrade-bottom2 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 5;
+  pointer-events: none;
+}
+.degrade-top2 {
+  top: 0;
+  background: linear-gradient(to bottom, #0d0d36, rgba(8, 8, 30, 0));
+  z-index: 1;
+}
+
+.degrade-bottom2{
+  bottom: 0;
+  background: linear-gradient(to top, #0d0d36, rgba(8, 8, 30, 0));
+}
+
+.lado-esquerdo2 {
+  width: 50%;
+  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #B1B1B1 350deg, #f8f8f8 360deg);
+  mix-blend-mode: color-dodge;
+  height: 100%;
+}
+/*==============================================
+                  background2
+===============================================*/
+.background2{
+  background:#08081E;
+  display: flex;
+  height: 100vh;
   width: 100%;
   position: relative;
 }
@@ -962,14 +1008,14 @@ header button i {
 .hero p.oi {
   line-height: 1.6;
   color: #ddd;
-  margin: 20px 520px;
+  margin: 20px 400px;
 }
 
 .hero h1 {
   font-size: 5rem;
   color: #B1B1B1;
   font-weight: bold;
-  margin: auto 200px;
+  margin: auto 100px;
   mix-blend-mode: color-dodge;
   font-family: Annapurna SIL;
   line-height: 1.4;
@@ -1045,12 +1091,42 @@ header button i {
   text-align: center;
 
 }.pnonosso{
-  padding:0 350px;
+  padding:0 180px;
   line-height: 1.6;
   margin: 0px 0px 40px 0px;
 
 }
+/*=============================
+           CONECTAR
+==============================*/
+.conectar{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  
+  margin: 0px auto;
 
+}.conectar p{
+  max-width: 330px;
+  margin: 20px;
+  line-height: 1.5;
+  background: linear-gradient(130deg,rgba(255, 255, 255, 0.02)
+   19.68%, rgba(255, 255, 255, 0.10)72.77%);
+   box-shadow: -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08)
+   inset,7px 9px 19.6px 0px rgba (0, 0, 0, 0.20)
+   inset;
+   border-radius: 10px;
+   border: solid 1px rgba(192, 192, 192, 0.233);
+   padding: 20px;
+}.conectar div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 
 /*=================================
                 FOOTER
