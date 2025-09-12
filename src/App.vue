@@ -122,12 +122,12 @@ function irParaComunicacaocomempresas() {
     </section>
     <div class="degrade-bottom2"></div>
   </div>
-  <div class="background2">
-    <div class="degrade-top2"></div>
-    <div class="lado-esquerdo2"></div>
-    <div class="lado-direito2"></div>
+  <div class="background3">
+    <div class="degrade-top3"></div>
+    <div class="lado-esquerdo3"></div>
+    <div class="lado-direito3"></div>
     <section class="conectar">
-      <div>
+      <div class="cima">
       <p>
         Conectar-se com pessoas que podem ajudar é vital no ambiente laboral. Cada relacionamento é uma oportunidade de
         aprendizado e crescimento. Ao cultivar redes, você não só expande seu conhecimento, mas também encontra apoio e
@@ -135,7 +135,7 @@ function irParaComunicacaocomempresas() {
       </p>
       <img src="../public/imagens/image 5(1).png" alt="image 5.png">
       </div>
-      <div>
+      <div class="baixo">
       <img src="../public/imagens/image 6(1).png" alt="image 6.png">
       <p>
         Para alcançar o sucesso profissional, é essencial adquirir habilidades específicas por meio de educação contínua
@@ -144,7 +144,7 @@ function irParaComunicacaocomempresas() {
       </p>
       </div>
     </section>
-    <div class="degrade-bottom2"></div>
+    <div class="degrade-bottom3"></div>
   </div>
   </div>
   <section v-if="paginaAtual === 'login'" id="loginFormadoSection">
@@ -908,6 +908,49 @@ Cadastrar
   mix-blend-mode: color-dodge;
   height: 100%;
   transform: scaleX(-1);
+}/*==============================================
+                  background3
+===============================================*/
+.background3{
+  background:#08081E;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.degrade-top3,
+.degrade-bottom3{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 5;
+  pointer-events: none;
+}
+.degrade-top3 {
+  top: 0;
+  background: linear-gradient(to bottom, #0d0d36, rgba(8, 8, 30, 0));
+  z-index: 1;
+}
+
+.degrade-bottom3{
+  bottom: 0;
+  background: linear-gradient(to top, #0d0d36, rgba(8, 8, 30, 0));
+}
+
+.lado-esquerdo3 {
+  width: 50%;
+  background: conic-gradient(from 90deg at 50% 50%, #0c0c0c 0deg, #B1B1B1 350deg, #f8f8f8 360deg);
+  mix-blend-mode: color-dodge;
+  height: 100%;
+}
+
+.lado-direito3 {
+  width: 50%;
+  background: conic-gradient(from 90deg at 50% 50%, #0c0c0c 0deg, #B1B1B1 350deg, #f8f8f8 360deg);
+  mix-blend-mode: color-dodge;
+  height: 100%;
+  transform: scaleX(-1);
 }
 /*==========================
          HEADER
@@ -1008,14 +1051,14 @@ header button i {
 .hero p.oi {
   line-height: 1.6;
   color: #ddd;
-  margin: 20px 400px;
+  margin: 0vh 50vh 5vh 50vh;
 }
 
 .hero h1 {
   font-size: 5rem;
   color: #B1B1B1;
   font-weight: bold;
-  margin: auto 100px;
+  margin: 10vh 100px;
   mix-blend-mode: color-dodge;
   font-family: Annapurna SIL;
   line-height: 1.4;
@@ -1103,15 +1146,15 @@ header button i {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
   position: absolute;
   align-items: center;
-  
-  margin: 0px auto;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr;
 
 }.conectar p{
   max-width: 330px;
-  margin: 20px;
+  margin: 0px 20px;
   line-height: 1.5;
   background: linear-gradient(130deg,rgba(255, 255, 255, 0.02)
    19.68%, rgba(255, 255, 255, 0.10)72.77%);
@@ -1120,12 +1163,29 @@ header button i {
    inset;
    border-radius: 10px;
    border: solid 1px rgba(192, 192, 192, 0.233);
-   padding: 20px;
+   padding: 20px  40px;
 }.conectar div{
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
+
+}.conectar .baixo{
+   margin-top: -300px;
+}.conectar .cima{
+  margin-bottom: -100px;
+}.conectar img{
+  width: 36vh;
+  height: 22vh;
+  background: linear-gradient(130deg,rgba(255, 255, 255, 0.02)
+   19.68%, rgba(255, 255, 255, 0.10)72.77%);
+   box-shadow: -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08)
+   inset,7px 9px 19.6px 0px rgba (0, 0, 0, 0.20)
+   inset;
+   border-radius: 10px;
+   border: solid 1px rgba(192, 192, 192, 0.233);
+   padding: 10px;
+
 }
 
 /*=================================
