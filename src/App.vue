@@ -171,7 +171,7 @@ function irParaComunicacaocomempresas() {
     <div class="degrade-bottom"></div>
   </div>
 </transition>
-<transition name="fade-slide" mode="out-in">
+<transition name="fade">
   <div class="background" v-if="paginaAtual === 'criarEmpresas'">
     <div class="degrade-top"></div>
     <div class="lado-esquerdo"></div>
@@ -233,6 +233,7 @@ function irParaComunicacaocomempresas() {
     <div class="degrade-bottom"></div>
   </div>
 </transition>
+<transition name="fade">
 <div class="background"  v-if="paginaAtual === 'criarFormado'">
     <div class="degrade-top"></div>
     <div class="lado-esquerdo"></div>
@@ -271,6 +272,8 @@ Cadastrar
 </section>
  <div class="degrade-bottom"></div>
   </div>
+  </transition>
+  <transition name="fade">
   <div class="background"  v-if="paginaAtual === 'LoginFormado'">
     <div class="degrade-top"></div>
     <div class="lado-esquerdo"></div>
@@ -297,6 +300,8 @@ Cadastrar
 </section>
  <div class="degrade-bottom"></div>
   </div>
+   </transition>
+   <transition name="fade">
   <div class="background"  v-if="paginaAtual === 'LoginEmpresa'">
     <div class="degrade-top"></div>
     <div class="lado-esquerdo"></div>
@@ -323,6 +328,7 @@ Cadastrar
 </section>
 <div class="degrade-bottom"></div>
   </div>
+  </transition>
 <section v-if="paginaAtual === 'Home'" id="HomeSection">
 <div>
   <input type="text" placeholder="Criar uma publicação">
