@@ -42,27 +42,30 @@ function irParaComunicacaocomempresas() {
 <template>
     <main class="mainpage">
     <header>
-      <img src="../public/imagens/Logo-Photoroom 1.png" alt="Logo-Photoroom 1.png">
-  <ul>
-    <li><a href=""><p>Vagas</p></a></li>
-    <li><a href=""><p>Empresas</p></a></li>
-    <li v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa' , 'irParaCriarEmpresas' , 'irParaCriarFormado'].includes(paginaAtual)">
-      <button @click="irParaLogin">Login</button>
-    </li>
-    <li v-else>
-      <img src="../public/imagens/flame.png" alt="flame.png">
-    </li>
-  </ul>
-  <div
-    v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa', 'irParaCriarEmpresas' , 'irParaCriarFormado'].includes(paginaAtual)"
-  >
-
-    <input type="text" placeholder="Buscar..." />
-    <button>
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-
-  </div>
+  <nav v-if="['home', 'login', 'loginFormado', 'loginEmpresa', 'criarEmpresas', 'criarFormado'].includes(paginaAtual)">
+    <ul>
+      <li><img src="../public/imagens/Logo-Photoroom 1.png" alt="Logo IMT" /></li>
+      <li><a href="#">Vagas</a></li>
+      <li><a href="#">Empresas</a></li>
+      <li>
+        <button @click="irParaLogin">Login</button>
+      </li>
+    </ul>
+  </nav>
+  <nav v-else>
+    <ul>
+      <li><img src="../public/imagens/Logo-Photoroom 1.png" alt="Logo IMT" /></li>
+      <li><a href="#">Vagas</a></li>
+      <li><a href="#">Empresas</a></li>
+      <li>
+        <img src="../public/imagens/flame.png" alt="Avatar" />
+      </li>
+    </ul>
+    <div class="search-wrapper">
+      <input type="text" placeholder="Buscar..." />
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+  </nav>
 </header>
     <div v-if="paginaAtual === 'home'">
       <div class="background">
@@ -1050,11 +1053,11 @@ header button i {
 ==============================*/
 .hero {
   position: absolute;
-  justify-content: center;
-  justify-items: center;
   text-align: center;
-  margin: 100px 0px;
+  margin: 100px auto;
   width: 100%;
+   justify-content: center;
+
 }
 
 .hero p.oi {
@@ -1062,6 +1065,8 @@ header button i {
   color: #ddd;
   max-width: 100vh;
   margin: 20px 0px;
+  width: 100%;
+  margin: 100px auto;
 }
 
 .hero h1 {
@@ -1072,6 +1077,7 @@ header button i {
   font-family: Annapurna SIL;
   line-height: 1.4;
   max-width: 150vh;
+  margin: 100px auto
 }
 
 /*=============================
