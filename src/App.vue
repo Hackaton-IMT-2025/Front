@@ -56,10 +56,12 @@ function irParaComunicacaocomempresas() {
   <div
     v-if="!['home', 'login', 'LoginFormado', 'LoginEmpresa', 'irParaCriarEmpresas' , 'irParaCriarFormado'].includes(paginaAtual)"
   >
+
     <input type="text" placeholder="Buscar..." />
     <button>
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
+
   </div>
 </header>
     <div v-if="paginaAtual === 'home'">
@@ -147,71 +149,96 @@ function irParaComunicacaocomempresas() {
     <div class="degrade-bottom3"></div>
   </div>
   </div>
-  <section v-if="paginaAtual === 'login'" id="loginFormadoSection">
+  <transition name="fade">
+  <div
+    class="background"
+    v-if="paginaAtual === 'login'"
+  >
+    <div class="degrade-top"></div>
+    <div class="lado-esquerdo"></div>
+    <div class="lado-direito"></div>
 
-    <h1>Voce é?</h1>
-    <button @click="irParaLoginFormado">
-      Formado
-    </button>
-    <button @click="irParaLoginEmpresa">
-      Empresa
-    </button>
-  </section>
-  <section>
+    <section class="vocee" id="loginFormadoSection">
+      <h1>Você é?</h1>
+      <button @click="irParaLoginFormado">
+        Formado
+      </button>
+      <button @click="irParaLoginEmpresa">
+        Empresa
+      </button>
+    </section>
 
-  </section>
-<section v-if="paginaAtual === 'criarEmpresas'" id="criarEmpresasSection">
-  <h1>Cria sua empresa</h1>
-<div>
-  <ul>
-    <li>
-      <div>
-      <input type="text" placeholder="nome da empresa">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
-    </li>
-    <li>
-      <div>
-      <input type="text" placeholder="email">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
-    </li>
-    <li>
-      <div>
-      <input type="text" placeholder="senha">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
-    </li>
-  </ul>
+    <div class="degrade-bottom"></div>
   </div>
-  <div>
-  <ul>
-    <li>
+</transition>
+<transition name="fade-slide" mode="out-in">
+  <div class="background" v-if="paginaAtual === 'criarEmpresas'">
+    <div class="degrade-top"></div>
+    <div class="lado-esquerdo"></div>
+    <div class="lado-direito"></div>
+
+    <section class="criarempresa" id="criarEmpresasSection">
+      <h1>Criar sua empresa</h1>
+      <div class="todo">
       <div>
-      <input type="text" placeholder="Endereço">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
-    </li>
-    <li>
+        <ul>
+          <li>
+            <div>
+              <input type="text" placeholder="nome da empresa">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </li>
+          <li>
+            <div>
+              <input type="text" placeholder="email">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </li>
+          <li>
+            <div>
+              <input type="text" placeholder="senha">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+
       <div>
-      <input type="text" placeholder="CNPJ">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
-    </li>
-    <li>
-      <div>
-      <input type="text" placeholder="Confirmação da senha">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
-    </li>
-  </ul>
-</div>
-  <button @click="irParaHome">
-Cadastrar
-  </button>
-</section>
-<section v-if="paginaAtual === 'criarFormado'" id="criarFormadoSection">
-<h1>Cria sua conta de formado</h1>
+        <ul>
+          <li>
+            <div>
+              <input type="text" placeholder="Endereço">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </li>
+          <li>
+            <div>
+              <input type="text" placeholder="CNPJ">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </li>
+          <li>
+            <div>
+              <input type="text" placeholder="Confirmação da senha">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+      </div>
+
+      <button @click="irParaHome">Cadastrar</button>
+    </section>
+
+    <div class="degrade-bottom"></div>
+  </div>
+</transition>
+<div class="background"  v-if="paginaAtual === 'criarFormado'">
+    <div class="degrade-top"></div>
+    <div class="lado-esquerdo"></div>
+    <div class="lado-direito"></div>
+<section class="criarformado" v-if="paginaAtual === 'criarFormado'" id="criarFormadoSection">
+<h1>Criar sua conta de formado</h1>
 <ul>
     <li>
       <div>
@@ -242,7 +269,13 @@ Cadastrar
 Cadastrar
   </button>
 </section>
-<section v-if="paginaAtual === 'LoginFormado'" id="LoginFormadoSection">
+ <div class="degrade-bottom"></div>
+  </div>
+  <div class="background"  v-if="paginaAtual === 'LoginFormado'">
+    <div class="degrade-top"></div>
+    <div class="lado-esquerdo"></div>
+    <div class="lado-direito"></div>
+<section class="loginformado" v-if="paginaAtual === 'LoginFormado'" id="LoginFormadoSection">
   <img src="../public/imagens/flame.png" alt="flame.png">
   <ul>
     <li>
@@ -262,7 +295,13 @@ Cadastrar
     login
   </button>
 </section>
-<section v-if="paginaAtual === 'LoginEmpresa'" id="LoginEmpresasSection">
+ <div class="degrade-bottom"></div>
+  </div>
+  <div class="background"  v-if="paginaAtual === 'LoginEmpresa'">
+    <div class="degrade-top"></div>
+    <div class="lado-esquerdo"></div>
+    <div class="lado-direito"></div>
+<section class="loginempresa" v-if="paginaAtual === 'LoginEmpresa'" id="LoginEmpresasSection">
   <img src="../public/imagens/flame.png" alt="flame.png">
   <ul>
     <li>
@@ -282,6 +321,8 @@ Cadastrar
     login
   </button>
 </section>
+<div class="degrade-bottom"></div>
+  </div>
 <section v-if="paginaAtual === 'Home'" id="HomeSection">
 <div>
   <input type="text" placeholder="Criar uma publicação">
@@ -792,7 +833,6 @@ Cadastrar
   background:#08081E;
   display: flex;
   height: 120vh;
-  width: 100%;
   position: relative;
 }
 .degrade-top,
@@ -829,42 +869,7 @@ Cadastrar
   height: 100%;
   transform: scaleX(-1);
 }
-/*==============================================
-                  background2
-===============================================*/
-.background2{
-  background:#08081E;
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  position: relative;
-}
-.degrade-top2,
-.degrade-bottom2 {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  z-index: 5;
-  pointer-events: none;
-}
-.degrade-top2 {
-  top: 0;
-  background: linear-gradient(to bottom, #0d0d36, rgba(8, 8, 30, 0));
-  z-index: 1;
-}
 
-.degrade-bottom2{
-  bottom: 0;
-  background: linear-gradient(to top, #0d0d36, rgba(8, 8, 30, 0));
-}
-
-.lado-esquerdo2 {
-  width: 50%;
-  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #B1B1B1 350deg, #f8f8f8 360deg);
-  mix-blend-mode: color-dodge;
-  height: 100%;
-}
 /*==============================================
                   background2
 ===============================================*/
@@ -1037,35 +1042,34 @@ header button i {
 /*=============================
          HERO (main)
 ==============================*/
-.mainpage{
-  justify-items: center;
-}
 .hero {
   position: absolute;
   justify-content: center;
   justify-items: center;
   text-align: center;
-  margin: 180px 50px;
+  margin: 100px 0px;
+  width: 100%;
 }
 
 .hero p.oi {
   line-height: 1.6;
   color: #ddd;
-  margin: 0vh 50vh 5vh 50vh;
+  max-width: 100vh;
+  margin: 20px 0px;
 }
 
 .hero h1 {
   font-size: 5rem;
   color: #B1B1B1;
   font-weight: bold;
-  margin: 10vh 100px;
   mix-blend-mode: color-dodge;
   font-family: Annapurna SIL;
   line-height: 1.4;
+  max-width: 150vh;
 }
 
 /*=============================
-        ESCOLHA (botões)
+   ESCOLHA (botões)/ geral
 ==============================*/
 .escolha {
   display: flex;
@@ -1074,8 +1078,7 @@ header button i {
   gap: 40px;
   margin: 30px 0;
 }
-
-.escolha button {
+button {
   padding: 12px 28px;
   border: none;
   border-radius: 30px;
@@ -1085,12 +1088,23 @@ header button i {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
+  font-weight:normal;
 
-.escolha button:hover {
+}
+ button:hover {
   background-color: #d4d4d4;
 }
-
+h1{ font-size: 4rem;
+  font-weight:bolder;
+  margin: 60px 0px;
+  mix-blend-mode: color-dodge;
+  color: #B1B1B1;
+}ul li div input {
+  padding: 12px 200px 12px 80px;
+  font-size: 16px;
+  border-radius: 5px;
+  border-style: none;
+}
 /*=============================
             TEXTOS
 ==============================*/
@@ -1113,7 +1127,8 @@ header button i {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 200px;
+  width: 100%;
+  margin: 180px 0px;
 }.nonosso ul{
   display: flex;
   padding: 20px;
@@ -1129,14 +1144,14 @@ header button i {
    border-radius: 10px;
    border: solid 1px rgba(192, 192, 192, 0.233);
   max-width: 250px;
-  margin: 25px auto;
+  margin: 25px 20px;
   line-height: 1.6;
   text-align: center;
 
 }.pnonosso{
-  padding:0 180px;
   line-height: 1.6;
-  margin: 0px 0px 40px 0px;
+  max-width: 100vh;
+  margin: auto;
 
 }
 /*=============================
@@ -1148,13 +1163,15 @@ header button i {
   display: flex;
   position: absolute;
   align-items: center;
-  margin: 20px auto;
+  margin: 10px auto;
   display: grid;
   grid-template-columns: 1fr;
 
 }.conectar p{
-  max-width: 330px;
-  margin: 0px 20px;
+  max-width: 50vh;
+  min-width: 30vh;
+  height: 27vh;
+  margin: 0px 0px;
   line-height: 1.5;
   background: linear-gradient(130deg,rgba(255, 255, 255, 0.02)
    19.68%, rgba(255, 255, 255, 0.10)72.77%);
@@ -1169,14 +1186,9 @@ header button i {
   align-items: center;
   justify-content: center;
 
-
-}.conectar .baixo{
-   margin-top: -300px;
-}.conectar .cima{
-  margin-bottom: -100px;
 }.conectar img{
-  width: 36vh;
-  height: 22vh;
+  width: 50vh;
+  height: 30vh;
   background: linear-gradient(130deg,rgba(255, 255, 255, 0.02)
    19.68%, rgba(255, 255, 255, 0.10)72.77%);
    box-shadow: -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08)
@@ -1185,8 +1197,114 @@ header button i {
    border-radius: 10px;
    border: solid 1px rgba(192, 192, 192, 0.233);
    padding: 10px;
-
 }
+/*=================================
+              VOCE É
+=================================*/
+.vocee{
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 190px 0px;
+  width: 100%;
+  height: 100%;
+}.vocee h1{
+  font-size: 4rem;
+  font-weight:bolder;
+  margin: 60px 0px;
+  mix-blend-mode: color-dodge;
+  color: #B1B1B1;
+}.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.6s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}.vocee button{
+margin: 0px 40px;
+padding: 18px 20px;
+font-size: 20px;
+  font-weight: normal;
+}
+/*=================================
+          criar sua empresa
+=================================*/
+.criarempresa{
+ position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 190px 0px;
+  width: 100%;
+  height: 100%;
+}.todo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}.criarempresa h1{
+  font-size: 3rem;
+}.criarempresa ul li{
+  margin: 30px;
+}
+.criarempresa button{
+  margin: 60px 0px;
+  font-size: 1.5rem;
+   font-weight:normal;
+}
+/*=================================
+        criar conta de formado
+=================================*/
+.criarformado{
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 150px 0px;
+  width: 100%;
+  height: 100%;
+}.criarformado ul li{
+  margin: 30px;
+}.criarformado ul li div input{
+   padding: 12px 200px 12px 20px;
+}.criarformado button{
+   margin: 60px 0px;
+  font-size: 1.5rem;
+   font-weight:normal;
+}.criarformado h1{
+  font-size:3rem;
+}
+/*=================================
+          login formado/empresa
+=================================*/
+.loginformado,
+.loginempresa{
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin:150px 0px;
+  width: 100%;
+  height: 100%;
+}.loginformado ul li,
+.loginempresa ul li{
+  margin: 30px;
+}.loginformado ul li div input,
+.loginempresa ul li input{
+   padding: 12px 200px 12px 20px;
+}.loginformado button,
+.loginempresa button{
+   margin: 100px 0px;
+  font-size: 1.5rem;
+   font-weight:normal;
+}.loginformado h1,
+.loginempresa h1{
+  font-size:3rem;
+}.loginformado img,
+ .loginempresa img{
+  margin: 70px 0px;
+}
+
 
 /*=================================
                 FOOTER
