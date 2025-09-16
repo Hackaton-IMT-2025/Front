@@ -53,7 +53,7 @@ function irParaUsuario() {
       <li><a href="#">Vagas</a></li>
       <li><a href="#">Empresas</a></li>
       <li>
-        <img  @click="" src="../public/imagens/flame.png" alt="Avatar" />
+        <img  @click="irParaUsuario" src="../public/imagens/flame.png" alt="Avatar" />
       </li>
     </ul>
     <div class="search-wrapper">
@@ -226,6 +226,7 @@ Cadastrar
   <img src="../public/imagens/flame.png" alt="flame.png">
   <ul>
     <li>
+
       <div>
       <input type="text" placeholder="email">
       <i class="fa-solid fa-magnifying-glass"></i>
