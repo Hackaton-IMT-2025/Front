@@ -64,7 +64,7 @@ function irParaComunicacaocomempresas() {
       <nav v-else>
         <div>
           <div>
-            <img src="../public/imagens/Logo-Photoroom 1.png" alt="Logo IMT" />
+            <img class="logo2" src="../public/imagens/Logo-Photoroom 1.png" alt="Logo IMT" />
           </div>
           <div class="search-wrapper">
             <input type="text" placeholder="Buscar" />
@@ -76,7 +76,7 @@ function irParaComunicacaocomempresas() {
           <li><a href="#">Vagas</a></li>
           <li><a href="#">Empresas</a></li>
           <li>
-            <img src="../public/imagens/flame.png" alt="Avatar" />
+            <img class="avatar" src="../public/imagens/flame.png" alt="Avatar" />
           </li>
         </ul>
       </nav>
@@ -328,32 +328,22 @@ function irParaComunicacaocomempresas() {
       <div class="lado-esquerdo2"></div>
       <div class="lado-direito2"></div>
       <section class="home" v-if="paginaAtual === 'Home'" id="HomeSection">
-        <div>
+        <div class="criarpublicacao">
           <input type="text" placeholder="Criar uma publicação" />
           <i class="fa-solid fa-magnifying-glass"></i>
           <img src="../public/imagens/flame5.png" alt="flame5.png" />
-          <ul>
-            <li>
-              <img src="../public/imagens/flame9.png" alt="flame9.png" />
-              <img src="../public/imagens/flame7.png" alt="flame7.png" />
-              <img src="../public/imagens/flame8.png" alt="flame8.png" />
-              <img src="../public/imagens/flame3.png" alt="flame3.png" />
-            </li>
-          </ul>
         </div>
         <div>
-          <ul>
-            <li>
-              <img src="../public/imagens/flame2.png" alt="flame2.png" />
+          <img src="../public/imagens/flame2.png" alt="flame2.png" />
+          <div>
               <h2>Empresa tal</h2>
-            </li>
-            <li>
               <p>
                 Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café
                 chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo
                 mundo que precisava de um pouco de paz acabava encontrando o lugar.
               </p>
-            </li>
+            </div>
+            <ul>
             <li>
               <p>Horarios</p>
             </li>
@@ -367,9 +357,11 @@ function irParaComunicacaocomempresas() {
               <p>Demais informações</p>
             </li>
           </ul>
+          </div>
+          <div>
+             <img src="../public/imagens/flame2.png" alt="flame2.png" />
           <ul>
             <li>
-              <img src="../public/imagens/flame2.png" alt="flame2.png" />
               <h2>Empresa tal</h2>
             </li>
             <li>
@@ -864,12 +856,16 @@ header nav {
   height: 80px;
   padding: 0 40px;
   z-index: 10;
-  margin: 50px;
+  margin: 50px 0;
 }
 
 header img {
   height: 100px;
   object-fit: contain;
+  margin: 0px 0px 0px 70px;
+}
+.logo2{
+  margin: -10px;
 }
 
 header ul {
@@ -877,7 +873,7 @@ header ul {
   align-items: center;
   gap: 100px;
   list-style: none;
-  margin: 0;
+  margin: 0px 50px 0px 0px;
   padding: 0;
 }
 
@@ -944,10 +940,18 @@ header nav div div.search-wrapper input {
   border: solid 1px rgba(192, 192, 192, 0.233);
   color: #f8f8f8;
   text-decoration: none;
+  font-size: 18px;
 }
 
 header nav div {
   display: flex;
+}header nav div div input{
+padding: 18px 400px 18px 20px;
+border-radius:200px ;
+}header .avatar{
+  height: 60px;
+  object-fit: contain;
+  margin: 0px 60px 0px 0px;
 }
 
 /*=============================
@@ -1103,7 +1107,6 @@ ul li div input {
   display: grid;
   grid-template-columns: 1fr;
 }
-
 .conectar p {
   max-width: 50vh;
   min-width: 30vh;
@@ -1118,7 +1121,10 @@ ul li div input {
     7px 9px 19.6px 0px rgba (0, 0, 0, 0.2) inset;
   border-radius: 10px;
   border: solid 1px rgba(192, 192, 192, 0.233);
-  padding: 20px 40px;
+  padding: 24px 40px;
+  object-fit: cover;
+  margin: 0px 20px;
+
 }
 
 .conectar div {
@@ -1127,9 +1133,7 @@ ul li div input {
   justify-content: center;
 }
 
-.conectar img {
-  width: 50vh;
-  height: 30vh;
+.conectar div img {
   background: linear-gradient(130deg,
       rgba(255, 255, 255, 0.02) 19.68%,
       rgba(255, 255, 255, 0.1) 72.77%);
@@ -1139,6 +1143,9 @@ ul li div input {
   border-radius: 10px;
   border: solid 1px rgba(192, 192, 192, 0.233);
   padding: 10px;
+  object-fit: cover;
+  width: 50vh;
+  height: 30vh;
 }
 
 /*=================================
@@ -1235,7 +1242,7 @@ ul li div input {
 }
 
 /*=================================
-          login formado/empresa
+        login formado/empresa
 =================================*/
 .loginformado,
 .loginempresa {
@@ -1280,8 +1287,36 @@ ul li div input {
 =================================*/
 .home {
   position: absolute;
-}
+  margin: 100px;
+}.home .criarpublicacao {
+  display: flex;
+  margin: 70px 35px;
 
+}.home .criarpublicacao input{
+background: transparent;
+border-style: NONE;
+  padding: 35px 700px 35px 20px;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 18px;
+}.home .criarpublicacao{
+  border-radius: 20PX;
+  margin: 60px 800px 0px 35px;
+  border-radius: 38px;
+  background: linear-gradient(130deg,
+      rgba(255, 255, 255, 0.02) 19.68%,
+      rgba(255, 255, 255, 0.1) 72.77%);
+  box-shadow:
+    -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08) inset,
+    7px 9px 19.6px 0px rgba (0, 0, 0, 0.2) inset;
+  border-radius: 30px;
+  border: solid 1px rgba(192, 192, 192, 0.233);
+
+}.home .criarpublicacao img{
+  margin: 10px 0px 0px 0px;
+}.home div{
+  align-items: center;
+}.home
 /*=================================
                 FOOTER
 =================================*/
