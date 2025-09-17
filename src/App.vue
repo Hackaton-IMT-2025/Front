@@ -21,22 +21,13 @@ function irParaHome() {
   paginaAtual.value = 'Home'
 }
 function irParaBusca() {
-  paginaAtual.value = 'Busca'
+  paginaAtual.value = 'irParaBusca'
 }
 function irParaHabilidadesNecessarias() {
   paginaAtual.value = 'HabilidadesNecessarias'
 }
-function irParaSelecaodecandidatos() {
-  paginaAtual.value = 'Selecaodecandidatos'
-}
 function irParaUsuario() {
-  paginaAtual.value = 'Usuario'
-}
-function irParaComunicacaocomcandidatos() {
-  paginaAtual.value = 'Comunicacaocomcandidatos'
-}
-function irParaComunicacaocomempresas() {
-  paginaAtual.value = 'Comunicacaocomempresas'
+  paginaAtual.value = 'irParaUsuario'
 }
 </script>
 <template>
@@ -68,15 +59,15 @@ function irParaComunicacaocomempresas() {
           </div>
           <div class="search-wrapper">
             <input type="text" placeholder="Buscar" />
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <img class="lupa" @click="irParaBusca" src="../public/imagens/flame6.png" alt="flame6.png">
           </div>
         </div>
         <ul>
           <li><a href="#">Inicio</a></li>
-          <li><a href="#">Vagas</a></li>
-          <li><a href="#">Empresas</a></li>
+          <li><a @click="irParaBusca" href="#">Vagas</a></li>
+          <li><a @click="irParaBusca" href="#">Empresas</a></li>
           <li>
-            <img class="avatar" src="../public/imagens/flame.png" alt="Avatar" />
+            <img @click="irParaUsuario" class="avatar" src="../public/imagens/flame.png" alt="Avatar" />
           </li>
         </ul>
       </nav>
@@ -328,6 +319,7 @@ function irParaComunicacaocomempresas() {
       <div class="lado-esquerdo2"></div>
       <div class="lado-direito2"></div>
       <section class="home" v-if="paginaAtual === 'Home'" id="HomeSection">
+        <div>
         <div class="criarpublicacao">
           <input type="text" placeholder="Criar uma publicação" />
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -335,7 +327,7 @@ function irParaComunicacaocomempresas() {
         </div>
         <div>
         <div  class="p">
-          <img src="../public/imagens/flame2.png" alt="flame2.png" />
+          <img class="pi" src="../public/imagens/flame2.png" alt="flame2.png" />
           <div>
               <h2>Empresa tal</h2>
               <p>
@@ -360,15 +352,14 @@ function irParaComunicacaocomempresas() {
           </div>
           </div>
           <div class="p">
-             <img src="../public/imagens/flame2.png" alt="flame2.png" />
+             <img class="pi" src="../public/imagens/flame2.png" alt="flame2.png" />
               <div>
               <h2>Empresa tal</h2>
               <p>
                 Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café
                 chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo
                 mundo que precisava de um pouco de paz acabava encontrando o lugar.
-              </p>
-              </div>
+              </p>        
               <ul>
             <li>
               <p>Horarios</p>
@@ -383,8 +374,11 @@ function irParaComunicacaocomempresas() {
               <p>Demais informações</p>
             </li>
           </ul>
+          </div>
         </div>
         </div>
+        </div>
+        <div>
         <div>
           <ul>
             <li>
@@ -402,6 +396,7 @@ function irParaComunicacaocomempresas() {
               <img src="../public/imagens/flame3.png" alt="flame3.png" />
             </li>
           </ul>
+        </div>
         </div>
       </section>
       <div class="degrade-bottom2"></div>
@@ -754,7 +749,7 @@ function irParaComunicacaocomempresas() {
 .background2 {
   background: #08081e;
   display: flex;
-  height: 100vh;
+  height: 110vh;
   width: 100%;
   position: relative;
 }
@@ -871,7 +866,7 @@ header img {
 header ul {
   display: flex;
   align-items: center;
-  gap: 100px;
+  gap: 50px;
   list-style: none;
   margin: 0px 50px 0px 0px;
   padding: 0;
@@ -952,6 +947,10 @@ border-radius:200px ;
   height: 60px;
   object-fit: contain;
   margin: 0px 60px 0px 0px;
+}header .lupa{
+  height: 65px;
+  position: absolute;
+  margin: 10px 0px 0px 625px;
 }
 
 /*=============================
@@ -1288,19 +1287,23 @@ ul li div input {
 .home {
   position: absolute;
   margin: 100px;
+  display: flex;
 
-}.home .criarpublicacao {
+}
+.home .criarpublicacao {
   display: flex;
   margin: 70px 35px;
 
-}.home .criarpublicacao input{
+}
+.home .criarpublicacao input{
 background: transparent;
 border-style: NONE;
-  padding: 35px 700px 35px 20px;
+  padding: 28px 400px 28px 20px;
   color: #fff;
   border-radius: 30px;
   font-size: 18px;
-}.home .criarpublicacao{
+}
+.home .criarpublicacao{
   border-radius: 20PX;
   margin: 60px 800px 0px 35px;
   border-radius: 38px;
@@ -1313,15 +1316,19 @@ border-style: NONE;
   border-radius: 30px;
   border: solid 1px rgba(192, 192, 192, 0.233);
 
-
-}.home .criarpublicacao img{
-  margin: 10px 0px 0px 0px;
-}.home div{
+}
+.home .criarpublicacao img{
+  margin: 10px 0px 0px 620px;
+  position: absolute;
+  height: 80px;
+}
+.home div{
   align-items: center;
-}.home .p{
+}
+.home .p{
   display: flex;
   border-radius: 20PX;
-  margin: 60px 800px 0px 35px;
+  margin: 20px 800px 0px 35px;
   border-radius: 38px;
   background: linear-gradient(130deg,
       rgba(255, 255, 255, 0.02) 19.68%,
@@ -1331,9 +1338,34 @@ border-style: NONE;
     7px 9px 19.6px 0px rgba (0, 0, 0, 0.2) inset;
   border-radius: 30px;
   border: solid 1px rgba(192, 192, 192, 0.233);
-  padding: 30px;
-}.home ul{
+  padding: 10px;
+}
+.home ul{
   display: flex;
+  align-items: center;
+  text-align: center;
+}
+.home h2{
+  font-size: 25px;
+  margin:10px 10px 10px 10px;
+}
+.home .pi{
+  margin: 0px 0px 70px 0px;
+}
+.home p{
+  max-width: 600px;
+  margin: 0px 0px 0px 10px;
+}.home ul li{
+  background: linear-gradient(130deg,
+      rgba(255, 255, 255, 0.02) 19.68%,
+      rgba(255, 255, 255, 0.1) 72.77%);
+  box-shadow:
+    -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08) inset,
+    7px 9px 19.6px 0px rgba (0, 0, 0, 0.2) inset;
+  border-radius: 15px;
+  border: solid 1px rgba(192, 192, 192, 0.233);
+  padding: 20px;
+  margin: 10px;
 }
 /*=================================
                 FOOTER
