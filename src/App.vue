@@ -334,6 +334,7 @@ function irParaComunicacaocomempresas() {
           <img src="../public/imagens/flame5.png" alt="flame5.png" />
         </div>
         <div>
+        <div  class="p">
           <img src="../public/imagens/flame2.png" alt="flame2.png" />
           <div>
               <h2>Empresa tal</h2>
@@ -342,7 +343,6 @@ function irParaComunicacaocomempresas() {
                 chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo
                 mundo que precisava de um pouco de paz acabava encontrando o lugar.
               </p>
-            </div>
             <ul>
             <li>
               <p>Horarios</p>
@@ -358,19 +358,18 @@ function irParaComunicacaocomempresas() {
             </li>
           </ul>
           </div>
-          <div>
+          </div>
+          <div class="p">
              <img src="../public/imagens/flame2.png" alt="flame2.png" />
-          <ul>
-            <li>
+              <div>
               <h2>Empresa tal</h2>
-            </li>
-            <li>
               <p>
                 Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café
                 chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo
                 mundo que precisava de um pouco de paz acabava encontrando o lugar.
               </p>
-            </li>
+              </div>
+              <ul>
             <li>
               <p>Horarios</p>
             </li>
@@ -384,6 +383,7 @@ function irParaComunicacaocomempresas() {
               <p>Demais informações</p>
             </li>
           </ul>
+        </div>
         </div>
         <div>
           <ul>
@@ -1288,6 +1288,7 @@ ul li div input {
 .home {
   position: absolute;
   margin: 100px;
+
 }.home .criarpublicacao {
   display: flex;
   margin: 70px 35px;
@@ -1312,11 +1313,28 @@ border-style: NONE;
   border-radius: 30px;
   border: solid 1px rgba(192, 192, 192, 0.233);
 
+
 }.home .criarpublicacao img{
   margin: 10px 0px 0px 0px;
 }.home div{
   align-items: center;
-}.home
+}.home .p{
+  display: flex;
+  border-radius: 20PX;
+  margin: 60px 800px 0px 35px;
+  border-radius: 38px;
+  background: linear-gradient(130deg,
+      rgba(255, 255, 255, 0.02) 19.68%,
+      rgba(255, 255, 255, 0.1) 72.77%);
+  box-shadow:
+    -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08) inset,
+    7px 9px 19.6px 0px rgba (0, 0, 0, 0.2) inset;
+  border-radius: 30px;
+  border: solid 1px rgba(192, 192, 192, 0.233);
+  padding: 30px;
+}.home ul{
+  display: flex;
+}
 /*=================================
                 FOOTER
 =================================*/
