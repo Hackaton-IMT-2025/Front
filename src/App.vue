@@ -336,16 +336,16 @@ function irParaUsuario() {
                 mundo que precisava de um pouco de paz acabava encontrando o lugar.
               </p>
             <ul>
-            <li>
+            <li class="demais">
               <p>Horarios</p>
             </li>
-            <li>
+            <li class="demais">
               <p>Salario</p>
             </li>
-            <li>
+            <li class="demais">
               <p>Localização</p>
             </li>
-            <li>
+            <li class="demais">
               <p>Demais informações</p>
             </li>
           </ul>
@@ -359,18 +359,18 @@ function irParaUsuario() {
                 Numa cidade onde as noites eram mais claras que os dias, havia um pequeno café
                 chamado Estelar. Ficava na esquina de uma rua que não aparecia nos mapas, mas todo
                 mundo que precisava de um pouco de paz acabava encontrando o lugar.
-              </p>        
+              </p>
               <ul>
-            <li>
+            <li class="demais">
               <p>Horarios</p>
             </li>
-            <li>
+            <li class="demais">
               <p>Salario</p>
             </li>
-            <li>
+            <li class="demais">
               <p>Localização</p>
             </li>
-            <li>
+            <li class="demais">
               <p>Demais informações</p>
             </li>
           </ul>
@@ -379,41 +379,84 @@ function irParaUsuario() {
         </div>
         </div>
         <div>
-        <div>
-          <ul>
-            <li>
+        <div class="curriculo">
+            <div class="nell">
               <img src="../public/imagens/flame.png" alt="flame.png" />
-            </li>
-            <li>
-              Nome: ****** Especialização: ****** Localidade: ****** Local de Estudos: *******
-            </li>
-            <li>
+              <p>
+                  Nome: ****** <br>
+                  Especialização: ****** <br>
+                  Localidade: ******<br>
+                  Local de Estudos: *******<br>
+              </p>
+              </div>
+              <div class="lembretes">
               <p>Notificações</p>
-              <img src="../public/imagens/flame4.png" alt="flame4.png" />
-            </li>
-            <li>
-              <p>Curriculum</p>
-              <img src="../public/imagens/flame3.png" alt="flame3.png" />
-            </li>
-          </ul>
+              <img  class="curriculum" src="../public/imagens/flame4.png" alt="flame4.png" />
+              </div>
+              <div class="lembretes">
+                <p>Curriculum</p>
+              <img class="curriculum2" src="../public/imagens/flame3.png" alt="flame3.png" />
+              </div>
         </div>
         </div>
       </section>
       <div class="degrade-bottom2"></div>
     </div>
-    <section v-if="paginaAtual === 'irParaBusca'" id="irParaBuscaSection">
+      <div class="background2" v-if="paginaAtual === 'irParaBusca'">
+        <div class="degrade-top2"></div>
+        <div class="lado-esquerdo2"></div>
+        <div class="lado-direito2"></div>
+    <section class="buscas" v-if="paginaAtual === 'irParaBusca'" id="irParaBuscaSection">
       <div>
+        <div class="branco">
         <ul>
           <li>
             <img src="../public/imagens/flame2.png" alt="flame2.png" />
+          </li>
+          <li>
             <h2>Empresa Salario</h2>
             <p>Precisamos estagiario de desenvolvedor em java</p>
           </li>
         </ul>
-      </div>
-      <div>
+        </div>
+        <div class="branco">
         <ul>
           <li>
+            <img src="../public/imagens/flame2.png" alt="flame2.png" />
+          </li>
+          <li>
+            <h2>Empresa Salario</h2>
+            <p>Precisamos estagiario de desenvolvedor em java</p>
+          </li>
+        </ul>
+        </div>
+        <div class="branco">
+        <ul>
+          <li>
+            <img src="../public/imagens/flame2.png" alt="flame2.png" />
+          </li>
+          <li>
+            <h2>Empresa Salario</h2>
+            <p>Precisamos estagiario de desenvolvedor em java</p>
+          </li>
+        </ul>
+        </div>
+        <div class="branco">
+        <ul>
+          <li>
+            <img src="../public/imagens/flame2.png" alt="flame2.png" />
+          </li>
+          <li>
+            <h2>Empresa Salario</h2>
+            <p>Precisamos estagiario de desenvolvedor em java</p>
+          </li>
+        </ul>
+        </div>
+      </div>
+      <div>
+        <div class="branco2">
+        <ul class="es">
+          <li class="esbranco">
             <img src="../public/imagens/flame2.png" alt="flame2.png" />
             <h2>Empresa Salario</h2>
           </li>
@@ -428,9 +471,11 @@ function irParaUsuario() {
             <button @click="irParaHabilidadesNecessarias">Habilidades necessarias</button>
           </li>
           <li>
-            <p>
-              Horário:**************** Salario:********* Modalidade:****************
-              Localização:******************
+            <p class="hsml">
+              Horário:**************** <br>
+               Salario:********* <br>
+                Modalidade:**************** <br>
+              Localização:****************** <br>
             </p>
           </li>
           <li>
@@ -441,15 +486,19 @@ function irParaUsuario() {
             </p>
           </li>
           <li>
-            <button>Candidatar-se</button>
+            <button class="candidatar">Candidatar-se</button>
           </li>
           <li>
-            <button>Enviar curriculum</button>
+            <button class="ec">Enviar curriculum</button>
           </li>
         </ul>
+        </div>
       </div>
     </section>
-    <section v-if="paginaAtual === 'irParaHabilidadesNecessarias'" id="irParaHabilidadesNecessariasSection">
+    <div class="degrade-bottom2"></div>
+    </div>
+
+    <section class="habilidades" v-if="paginaAtual === 'irParaHabilidadesNecessarias'" id="irParaHabilidadesNecessariasSection">
       <ul>
         <li>
           <img src="../public/imagens/flame1.png" alt="flame1.png" />
@@ -481,56 +530,43 @@ function irParaUsuario() {
         </li>
       </ul>
     </section>
-    <section v-if="paginaAtual === 'irParaUsuario'" id="irParaUsuarioSection">
-      <button>
-        Agregar habilidades <img src="../public/imagens/flame5.png" alt="flame5.png" />
+
+      <div class="background2" v-if="paginaAtual === 'irParaUsuario'">
+        <div class="degrade-top2"></div>
+        <div class="lado-esquerdo2"></div>
+        <div class="lado-direito2"></div>
+    <section class="usuario" v-if="paginaAtual === 'irParaUsuario'" id="irParaUsuarioSection">
+      <button class="agregar">
+       <p> Agregar habilidades</p> <img src="../public/imagens/flame5.png" alt="flame5.png" />
       </button>
-      <div>
-        <h1>Voce possui alguma condição física ou mental?</h1>
+      <div class="ana">
+        <h2>Voce possui alguma condição física ou mental?</h2>
         <p>Se sim, por favor anexe o documento comprovante</p>
         <button>Documento Anexado</button>
-        <div>
+        <div class="vs">
           <button>Anexar</button>
           <button>Não possuo</button>
           <button>Atualizar</button>
         </div>
       </div>
-      <div>
-        <h1>Voce possui algum certificado ou diploma?</h1>
+      <div class="ana">
+        <h2>Voce possui algum certificado ou diploma?</h2>
         <p>
           Se sim, por favor anexe o documento comprovante, deve possuir codigo QR e conter suas
           informações pessoais e da instituição na qual se formou, além da carga horária.
         </p>
         <button>documento Anexado</button>
-        <div>
+        <div class="vs">
           <button>Anexar</button>
           <button>Não possuo</button>
           <button>Atualizar</button>
         </div>
-      </div>
-      Localidade <img src="../public/imagens/flame5.png" alt="flame5.png" />
-      <div>
-        <h1>Qual seria seu lugar de trabalho?</h1>
-        <div>
-          <button>Empresa</button>
-          <button>Remoto</button>
-          <button>Integral</button>
-        </div>
-      </div>
-      <div>
-        <h1>Voce possui algum certificado ou diploma?</h1>
-        <p>
-          Se sim, por favor anexe o documento comprovante, deve possuir codigo QR e conter suas
-          informações pessoais e da instituição na qual se formou, além da carga horária.
-        </p>
-        <button>Documento Anexado**</button>
-        <div>
-          <button>Anexar</button>
-          <button>Não possuo</button>
-          <button>Atualizar</button>
-        </div>
+
+
       </div>
     </section>
+    <div class="degrade-bottom2"></div>
+    </div>
     <section v-if="paginaAtual === 'irParaSelecaodecandidatos'" id="irParaSelecaodecandidatosSection">
       <ul>
         <li>
@@ -645,28 +681,9 @@ function irParaUsuario() {
     </section>
   </main>
   <footer>
-    <img src="../public/imagens/Logo-Photoroom 1.png" alt="Logo-Photoroom 1.png" />
+
     <ul>
-      <li>
-        <p>
-          <a href="">Geral</a>
-        </p>
-      </li>
-      <li>
-        <button @click="irParaLogin">login</button>
-      </li>
-      <li>
-        <p>
-          <a href="">Empresas</a>
-        </p>
-      </li>
-      <li>
-        <p>
-          <a href="">Vagas</a>
-        </p>
-      </li>
-    </ul>
-    <ul>
+      <div>
       <li>
         <a href="https://x.com/IMT184516329585"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License -
@@ -692,8 +709,31 @@ function irParaUsuario() {
               d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
           </svg></a>
       </li>
+      </div>
+      <p class="copy">&copy;2025 Copyright</p>
     </ul>
-    <p>&copy;2025 Copyright</p>
+
+    <ul class="geral">
+      <li>
+        <p>
+          <a href="">Geral</a>
+        </p>
+      </li>
+      <li>
+        <button cla @click="irParaLogin">Login</button>
+      </li>
+      <li>
+        <p>
+          <a href="">Empresas</a>
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="">Vagas</a>
+        </p>
+      </li>
+    </ul>
+<img src="../public/imagens/Logo-Photoroom 1.png" alt="Logo-Photoroom 1.png" />
   </footer>
 </template>
 <style scoped>
@@ -705,6 +745,7 @@ function irParaUsuario() {
   display: flex;
   height: 120vh;
   position: relative;
+  align-items: center;
 }
 
 .degrade-top,
@@ -736,12 +777,13 @@ function irParaUsuario() {
 }
 
 .lado-direito {
-  width: 50%;
-  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #b1b1b1 200deg, #f8f8f8 360deg);
+  width: 52%;
+  background: conic-gradient(from 90deg at 50% 75.01%, #0c0c0c 0deg, #b1b1b1 200deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
   transform: scaleX(-1);
 }
+
 
 /*==============================================
                   background2
@@ -749,7 +791,7 @@ function irParaUsuario() {
 .background2 {
   background: #08081e;
   display: flex;
-  height: 110vh;
+  height: 130vh;
   width: 100%;
   position: relative;
 }
@@ -783,8 +825,8 @@ function irParaUsuario() {
 }
 
 .lado-direito2 {
-  width: 50%;
-  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #b1b1b1 350deg, #f8f8f8 360deg);
+  width: 52%;
+  background: conic-gradient(from 90deg at 50% 75.01%, #0c0c0c 0deg, #b1b1b1 350deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
   transform: scaleX(-1);
@@ -830,8 +872,8 @@ function irParaUsuario() {
 }
 
 .lado-direito3 {
-  width: 50%;
-  background: conic-gradient(from 90deg at 50% 50%, #0c0c0c 0deg, #b1b1b1 350deg, #f8f8f8 360deg);
+  width: 52%;
+  background: conic-gradient(from 90deg at 50% 50.01%, #0c0c0c 0deg, #b1b1b1 350deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
   transform: scaleX(-1);
@@ -891,6 +933,7 @@ header ul li a:hover,
 header ul li p:hover {
   color: #b1b1b1;
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 header ul li button {
@@ -946,11 +989,13 @@ border-radius:200px ;
 }header .avatar{
   height: 60px;
   object-fit: contain;
-  margin: 0px 60px 0px 0px;
+  margin: 0px 20px 0px 0px;
 }header .lupa{
   height: 65px;
   position: absolute;
-  margin: 10px 0px 0px 625px;
+  margin: 10px 0px 0px 610px;
+}header img:hover {
+  transform: scale(1.1);
 }
 
 /*=============================
@@ -959,7 +1004,7 @@ border-radius:200px ;
 .hero {
   position: absolute;
   text-align: center;
-  margin: 100px auto;
+  margin: 20px auto;
   width: 100%;
   justify-content: center;
 }
@@ -968,9 +1013,8 @@ border-radius:200px ;
   line-height: 1.6;
   color: #ddd;
   max-width: 100vh;
-  margin: 20px 0px;
   width: 100%;
-  margin: 100px auto;
+  margin: -100px auto 30px auto;
 }
 
 .hero h1 {
@@ -981,7 +1025,7 @@ border-radius:200px ;
   font-family: Annapurna SIL;
   line-height: 1.4;
   max-width: 150vh;
-  margin: 100px auto;
+  margin: 10px auto;
 }
 
 /*=============================
@@ -1010,6 +1054,7 @@ button {
 
 button:hover {
   background-color: #d4d4d4;
+  transform: scale(1.05);
 }
 
 h1 {
@@ -1061,7 +1106,7 @@ ul li div input {
   justify-content: center;
   text-align: center;
   width: 100%;
-  margin: 180px 0px;
+  margin: 340px 0px;
 }
 
 .nonosso ul {
@@ -1166,6 +1211,7 @@ ul li div input {
   margin: 60px 0px;
   mix-blend-mode: color-dodge;
   color: #b1b1b1;
+  margin: 260px 0px 80px 0px ;
 }
 
 .vocee button {
@@ -1197,6 +1243,7 @@ ul li div input {
 
 .criarempresa h1 {
   font-size: 3rem;
+  margin: 220px 0px 60px 0px;
 }
 
 .criarempresa ul li {
@@ -1238,6 +1285,7 @@ ul li div input {
 
 .criarformado h1 {
   font-size: 3rem;
+  margin: 180px 0px 70px 0px;
 }
 
 /*=================================
@@ -1274,11 +1322,12 @@ ul li div input {
 .loginformado h1,
 .loginempresa h1 {
   font-size: 3rem;
+
 }
 
 .loginformado img,
 .loginempresa img {
-  margin: 70px 0px;
+  margin: 200px 0px 60px 0px;
 }
 
 /*=================================
@@ -1350,12 +1399,13 @@ border-style: NONE;
   margin:10px 10px 10px 10px;
 }
 .home .pi{
-  margin: 0px 0px 70px 0px;
+  margin: 0px 0px 160px 0px;
 }
 .home p{
   max-width: 600px;
   margin: 0px 0px 0px 10px;
-}.home ul li{
+  line-height: 1.4;
+}.home ul li.demais{
   background: linear-gradient(130deg,
       rgba(255, 255, 255, 0.02) 19.68%,
       rgba(255, 255, 255, 0.1) 72.77%);
@@ -1367,56 +1417,306 @@ border-style: NONE;
   padding: 20px;
   margin: 10px;
 }
-/*=================================
-                FOOTER
-=================================*/
+.curriculo2{
+  flex-direction: column;
+
+}.curriculo2 ul{
+ align-items: center;
+ text-align: center;
+}.curriculo{
+  margin: 0px 200px 0px -600px;
+}.curriculo div{
+  background: linear-gradient(130deg,
+      rgba(255, 255, 255, 0.02) 19.68%,
+      rgba(255, 255, 255, 0.1) 72.77%);
+  box-shadow:
+    -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08) inset,
+    7px 9px 19.6px 0px rgba (0, 0, 0, 0.2) inset;
+  border-radius: 15px;
+  border: solid 1px rgba(228, 221, 221, 0.233);
+  padding: 20px;
+  margin: 10px;
+}.curriculo div img{
+  position: absolute;
+  margin: -40px 0px 0px 320px;
+}.curriculo p{
+  padding:40px 1px;
+  line-height: 1.8;
+  font-size: 18px;
+
+}.curriculo .nell{
+  padding: 30px 5px;
+  margin:60px 0px ;
+}.curriculo .curriculum{
+   margin: -66px 0px 0px 340px ;
+}.curriculo .curriculum2{
+   margin: -66px 0px 0px 336px ;
+}.curriculo .lembretes{
+  padding: 0px;
+  margin: 20px 20px 30px 0px;
+}.curriculo .lembretes p{
+  padding: 20px;
+}
+/*=============================
+            Buscas
+==============================*/
+.buscas{
+  position: absolute;
+  margin: 130px;
+  display: flex;
+}
+.buscas ul{
+  display: flex;
+  align-items: center;
+}.buscas .es{
+  flex-direction: column;
+}.buscas div{
+   border-radius: 38px;
+  background: linear-gradient(130deg,
+      rgba(255, 255, 255, 0.02) 19.68%,
+      rgba(255, 255, 255, 0.1) 72.77%);
+  box-shadow:
+    -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08) inset,
+    7px 9px 19.6px 0px rgba (0, 0, 0, 0.2) inset;
+  border-radius: 15px;
+  border: solid 1px rgba(192, 192, 192, 0.233);
+  padding: 10px;
+  margin: 10px;
+}.buscas .branco{
+  background: #d4d4d493;
+  border-radius: 15px;
+  padding: 10px 100px 50px 10px;
+  margin: 11px ;
+
+}.buscas .branco2{
+  background: #d4d4d493;
+  border-radius: 15px;
+  padding: 10px 10px 50px 10px;
+  margin: 11px ;
+}.buscas h2{
+  color:#151592;
+  margin: 10px 20px;
+  font-size: 18px;
+}.buscas p{
+  color: #000;
+  margin: 0px 10px 0px 10px;
+  max-width: 600px;
+  line-height:1.4 ;
+}.buscas img{
+  width: 60px;
+  height: 60px;
+  margin: 0px 0px 10px 0px;
+}.buscas .esbranco{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin: 0px 340px 0px 0px;
+    justify-content: center;
+}.buscas button{
+  padding: 20px 180px;
+  border-radius: 5px;
+  margin: 20px;
+  background: #0d0d36;
+  color: #b1b1b1;
+}.buscas .hsml{
+  line-height: 2.0 ;
+  margin: 10px 330px 10px 0px;
+}.buscas .candidatar{
+  margin: 10px;
+  padding: 20px 215px;
+}.buscas .ec{
+  margin: 10px;
+  padding: 20px 204px;
+}
+/*=============================
+            Usuario
+==============================*/
+.usuario {
+  position: absolute;
+  margin: 150px;
+}.usuario .agregar{
+  align-items: center;
+  display: flex;
+  padding: 10px 10px 10px 10px;
+   border-radius: 30px;
+
+}.usuario button{
+  border-radius: 38px;
+  background: linear-gradient(130deg,
+      rgba(255, 255, 255, 0.02) 19.68%,
+      rgba(255, 255, 255, 0.1) 72.77%);
+  box-shadow:
+    -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08) inset,
+    7px 9px 19.6px 0px rgba (0, 0, 0, 0.2) inset;
+  border-radius: 15px;
+  border: solid 1px rgba(192, 192, 192, 0.233);
+  padding: 10px;
+  margin: 10px;
+  color: #e7e7e7;
+  padding: 22px 45px;
+}.usuario img{
+  width: 60px;
+  height: 60px;
+}.usuario .agregar p{
+  margin: 0px 928px 0px 40px;
+
+
+}.usuario .ana{
+  border-radius: 38px;
+  background: linear-gradient(130deg,
+      rgba(255, 255, 255, 0.02) 19.68%,
+      rgba(255, 255, 255, 0.1) 72.77%);
+  box-shadow:
+    -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08) inset,
+    7px 9px 19.6px 0px rgba (0, 0, 0, 0.2) inset;
+  border-radius: 15px;
+  border: solid 1px rgba(192, 192, 192, 0.233);
+  padding: 10px;
+  margin: 10px;
+  color: #e7e7e7;
+  padding: 22px 45px;
+}.usuario p{
+   line-height: 1.4;
+   margin: 0px 0px 0px 14px;
+}.usuario  h2{
+  font-size: 20px;
+  margin: 10px;
+}.usuario .vs{
+  margin: 0px 0px 0px 300px;
+}
+
+/*=============================
+            FOOTER
+==============================*/
 footer {
   background: #0d0d36;
-  padding: 20px 5%;
+  color: #fff;
+  padding: 50px 5% ;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 15px;
-  text-align: center;
+  gap: 40px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  justify-content: space-between;
 }
 
 footer ul {
-  display: flex;
-  gap: 20px;
   list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
   padding: 0;
+  margin: 0;
+  align-items: center;
 }
 
-footer a {
-  color: aliceblue;
-  text-decoration: none;
-  transition: color 0.3s;
+footer ul li a svg {
+  width: 50px;
+  height: 50px;
+  fill: #fff;
+  transition: fill 0.3s ease, transform 0.3s ease;
 }
 
-footer a:hover {
-  color: #b1b1b1;
-}
-
-.vocee button {
-  margin: 0px 40px;
-  padding: 18px 20px;
-  font-size: 20px;
-  font-weight: normal;
-}
-
-footer svg {
-  width: 24px;
-  height: 24px;
-  fill: aliceblue;
-  transition: fill 0.3s;
-}
-
-footer svg:hover {
+footer ul li a svg:hover {
   fill: #b1b1b1;
+  transform: scale(1.2);
 }
 
-footer p {
-  color: #b1b1b1;
-  font-size: 0.9rem;
+footer .copy {
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
 }
+
+footer .geral {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+footer .geral li p,
+footer .geral li button {
+  color: #fff;
+  font-weight: 500;
+  font-size: 26px;
+  transition: color 0.3s ease;
+}
+
+footer .geral li p a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer .geral li p a:hover,
+footer .geral li button:hover {
+  color: #b1b1b1;
+  cursor: pointer;
+}
+
+footer button {
+  background:transparent;
+  color: #0d0d36;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+footer button:hover {
+  background: transparent;
+  transform: scale(1.05);
+}footer p:hover{
+  transform: scale(1.1);
+}
+
+/* Footer logo */
+footer img {
+  width: 120px;
+  object-fit: contain;
+  margin-top: 20px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+footer img:hover {
+  transform: scale(1.1);
+}
+footer div{
+  display: flex;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  footer ul,
+  footer .geral {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
+/*</div>
+      Localidade <img src="../public/imagens/flame5.png" alt="flame5.png" />
+      <div>
+        <h2>Qual seria seu lugar de trabalho?</h2>
+        <div>
+          <button>Empresa</button>
+          <button>Remoto</button>
+          <button>Integral</button>
+        </div>
+      </div>
+      <div>
+        <h2>Voce possui algum certificado ou diploma?</h2>
+        <p>
+          Se sim, por favor anexe o documento comprovante, deve possuir codigo QR e conter suas
+          informações pessoais e da instituição na qual se formou, além da carga horária.
+        </p>
+        <button>Documento Anexado**</button>
+        <div>
+          <button>Anexar</button>
+          <button>Não possuo</button>
+          <button>Atualizar</button>
+        </div>*/
 </style>
