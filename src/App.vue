@@ -1367,7 +1367,7 @@ ul li div input {
 
 .criarempresa h1 {
   font-size: 3rem;
-  margin: 220px 0px 60px 0px;
+  margin: 330px 0px 60px 0px;
 }
 
 .criarempresa ul li {
@@ -1409,7 +1409,7 @@ ul li div input {
 
 .criarformado h1 {
   font-size: 3rem;
-  margin: 180px 0px 70px 0px;
+  margin: 290px 0px 70px 0px;
 }
 
 /*=================================
@@ -1451,7 +1451,7 @@ ul li div input {
 
 .loginformado img,
 .loginempresa img {
-  margin: 200px 0px 60px 0px;
+  margin: 300px 0px 60px 0px;
 }
 
 /*=================================
