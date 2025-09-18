@@ -24,7 +24,7 @@ function irParaBusca() {
   paginaAtual.value = 'irParaBusca'
 }
 function irParaHabilidadesNecessarias() {
-  paginaAtual.value = 'HabilidadesNecessarias'
+  paginaAtual.value = 'irParaHabilidadesNecessarias'
 }
 function irParaUsuario() {
   paginaAtual.value = 'irParaUsuario'
@@ -90,7 +90,7 @@ function irParaUsuario() {
             <p>Ou</p>
             <button @click="irParaCriarFormado">Formado</button>
           </div>
-          <h1>INTRODUÇÃO AO MUNDO DO TRABALHO</h1>
+          <h1 class="imt">INTRODUÇÃO AO MUNDO DO TRABALHO</h1>
         </section>
         <div class="degrade-bottom2"></div>
       </div>
@@ -498,44 +498,56 @@ function irParaUsuario() {
     <div class="degrade-bottom2"></div>
     </div>
 
+        <div class="background2" v-if="paginaAtual === 'irParaHabilidadesNecessarias'">
+        <div class="degrade-top2"></div>
+        <div class="lado-esquerdo2"></div>
+        <div class="lado-direito2"></div>
     <section class="habilidades" v-if="paginaAtual === 'irParaHabilidadesNecessarias'" id="irParaHabilidadesNecessariasSection">
+<div>
+  <div class="branco">
       <ul>
         <li>
-          <img src="../public/imagens/flame1.png" alt="flame1.png" />
-          <h2>Habilidades que voce possui e são requeridas para o cargo</h2>
+<h2 class="hqv">Habilidades que voce possui e são requeridas para o cargo</h2>
+<img src="../public/imagens/flame1.png" alt="flame1.png" />
         </li>
         <li>
-          <button>Habilidades</button>
+          <button class="hb">Habilidades</button>
         </li>
         <li>
-          <button>Habilidades</button>
+          <button class="hb">Habilidades</button>
         </li>
         <li>
-          <button>Habilidades</button>
+          <button class="hb">Habilidades</button>
         </li>
         <li>
           <h2>Habilidades que voce não possui e são requeridas para o cargo</h2>
         </li>
         <li>
-          <button>Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png" /></button>
+          <button><p>Habilidades</p> <img src="../public/imagens/flame5.png" alt="flame5.png" /></button>
         </li>
         <li>
-          <button>Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png" /></button>
+          <button><p>Habilidades</p> <img src="../public/imagens/flame5.png" alt="flame5.png" /></button>
         </li>
         <li>
-          <button>Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png" /></button>
+          <button><p>Habilidades</p> <img src="../public/imagens/flame5.png" alt="flame5.png" /></button>
         </li>
         <li>
-          <button>Habilidades <img src="../public/imagens/flame5.png" alt="flame5.png" /></button>
+          <button><p>Habilidades</p> <img src="../public/imagens/flame5.png" alt="flame5.png" /></button>
         </li>
       </ul>
+      </div>
+      </div>
     </section>
+    <div class="degrade-bottom2"></div>
+    </div>
 
+
+    <section v-if="paginaAtual === 'irParaUsuario'" id="irParaUsuarioSection">
       <div class="background2" v-if="paginaAtual === 'irParaUsuario'">
         <div class="degrade-top2"></div>
         <div class="lado-esquerdo2"></div>
         <div class="lado-direito2"></div>
-    <section class="usuario" v-if="paginaAtual === 'irParaUsuario'" id="irParaUsuarioSection">
+      <section class="usuario">
       <button class="agregar">
        <p> Agregar habilidades</p> <img src="../public/imagens/flame5.png" alt="flame5.png" />
       </button>
@@ -549,7 +561,7 @@ function irParaUsuario() {
           <button>Atualizar</button>
         </div>
       </div>
-      <div class="ana">
+       <div class="ana">
         <h2>Voce possui algum certificado ou diploma?</h2>
         <p>
           Se sim, por favor anexe o documento comprovante, deve possuir codigo QR e conter suas
@@ -561,12 +573,45 @@ function irParaUsuario() {
           <button>Não possuo</button>
           <button>Atualizar</button>
         </div>
-
-
       </div>
-    </section>
-    <div class="degrade-bottom2"></div>
+      </section>
+      <div class="degrade-bottom2"></div>
     </div>
+    <div class="background2" v-if="paginaAtual === 'irParaUsuario'">
+        <div class="degrade-top2"></div>
+        <div class="lado-esquerdo2"></div>
+        <div class="lado-direito2"></div>
+      <section class="usuario">
+          <button class="localidade">
+     <p> Localidade</p> <img src="../public/imagens/flame5.png" alt="flame5.png" />
+     </button>
+      <div class="ana">
+      <div>
+        <h2>Qual seria seu lugar de trabalho?</h2>
+        <div class="vs">
+          <button>Empresa</button>
+          <button>Remoto</button>
+          <button>Integral</button>
+        </div>
+        </div>
+      </div>
+      <div class="ana">
+        <h2>Voce possui algum certificado ou diploma?</h2>
+        <p>
+          Se sim, por favor anexe o documento comprovante, deve possuir codigo QR e conter suas
+          informações pessoais e da instituição na qual se formou, além da carga horária.
+        </p>
+        <div class="vs">
+          <button>Anexar</button>
+          <button>Não possuo</button>
+          <button>Atualizar</button>
+        </div>
+        </div>
+      </section>
+      <div class="degrade-bottom2"></div>
+    </div>
+    </section>
+
     <section v-if="paginaAtual === 'irParaSelecaodecandidatos'" id="irParaSelecaodecandidatosSection">
       <ul>
         <li>
@@ -819,14 +864,14 @@ function irParaUsuario() {
 
 .lado-esquerdo2 {
   width: 50%;
-  background: conic-gradient(from 90deg at 50% 75%, #0c0c0c 0deg, #b1b1b1 350deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 75%, #f8f8f8 0deg , #0c0c0c 6deg, #b1b1b1 355deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
 }
 
 .lado-direito2 {
   width: 52%;
-  background: conic-gradient(from 90deg at 50% 75.01%, #0c0c0c 0deg, #b1b1b1 350deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 75.01%, #f8f8f8 0deg , #0c0c0c 6deg, #b1b1b1 355deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
   transform: scaleX(-1);
@@ -866,14 +911,14 @@ function irParaUsuario() {
 
 .lado-esquerdo3 {
   width: 50%;
-  background: conic-gradient(from 90deg at 50% 50%, #0c0c0c 0deg, #b1b1b1 350deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 50%,#f8f8f8 0deg,  #0c0c0c 6deg, #b1b1b1 355deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
 }
 
 .lado-direito3 {
   width: 52%;
-  background: conic-gradient(from 90deg at 50% 50.01%, #0c0c0c 0deg, #b1b1b1 350deg, #f8f8f8 360deg);
+  background: conic-gradient(from 90deg at 50% 50.01%, #f8f8f8 0deg, #0c0c0c 6deg, #b1b1b1 355deg, #f8f8f8 360deg);
   mix-blend-mode: color-dodge;
   height: 100%;
   transform: scaleX(-1);
@@ -886,7 +931,7 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -1017,7 +1062,7 @@ border-radius:200px ;
   margin: -100px auto 30px auto;
 }
 
-.hero h1 {
+.hero .imt {
   font-size: 5rem;
   color: #b1b1b1;
   font-weight: bold;
@@ -1347,7 +1392,7 @@ ul li div input {
 .home .criarpublicacao input{
 background: transparent;
 border-style: NONE;
-  padding: 28px 400px 28px 20px;
+  padding: 28px 427px 28px 20px;
   color: #fff;
   border-radius: 30px;
   font-size: 18px;
@@ -1414,7 +1459,7 @@ border-style: NONE;
     7px 9px 19.6px 0px rgba (0, 0, 0, 0.2) inset;
   border-radius: 15px;
   border: solid 1px rgba(192, 192, 192, 0.233);
-  padding: 20px;
+  padding: 13px;
   margin: 10px;
 }
 .curriculo2{
@@ -1583,7 +1628,72 @@ border-style: NONE;
   margin: 10px;
 }.usuario .vs{
   margin: 0px 0px 0px 300px;
+}.usuario .localidade{
+align-items: center;
+  padding: 10px 10px 10px 10px;
+   border-radius: 30px;
+   display: flex;
+}.usuario .localidade p{
+  margin: 0px 1000px 0px 40px;
 }
+/*=============================
+          habilidades
+==============================*/
+.habilidades{
+    position: absolute;
+    margin:180px 200px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+
+}.habilidades ul li{
+  display: flex;
+  align-items: center;
+}.habilidades button{
+  padding: 10px 10px 10px 330px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  border-radius: 10px;
+  background: #121245;
+  color: #e7e7e7;
+
+}.habilidades img{
+  width: 60px;
+  height: 60px;
+  margin: 0px 0px -5px 220px;
+}.habilidades div{
+   border-radius: 38px;
+  background: linear-gradient(130deg,
+      rgba(255, 255, 255, 0.02) 19.68%,
+      rgba(255, 255, 255, 0.1) 72.77%);
+  box-shadow:
+    -7px -9px 26.1px 0px rgba(255, 255, 255, 0.08) inset,
+    7px 9px 19.6px 0px rgba (0, 0, 0, 0.2) inset;
+  border: solid 1px rgba(192, 192, 192, 0.233);
+  margin: 0px;
+  color: #e7e7e7;
+  padding: 44px 190px;
+}.habilidades .hb{
+  padding: 20px 310px;
+   background: #31318F;
+   border-radius: 10px ;
+  color: #e7e7e7;
+}.habilidades h2{
+  font-size: 18px;
+  margin: 10px 0px 10px 100px;
+  color:#000 ;
+}.habilidades .branco{
+  padding: 20px;
+  background: #d4d4d493;
+  border-radius:10px ;
+
+}.habilidades .hqv{
+  padding: 0px;
+  margin: 0px -140px 0px 100px;
+}
+
 
 /*=============================
             FOOTER
@@ -1697,26 +1807,5 @@ footer div{
     align-items: center;
   }
 }
-/*</div>
-      Localidade <img src="../public/imagens/flame5.png" alt="flame5.png" />
-      <div>
-        <h2>Qual seria seu lugar de trabalho?</h2>
-        <div>
-          <button>Empresa</button>
-          <button>Remoto</button>
-          <button>Integral</button>
-        </div>
-      </div>
-      <div>
-        <h2>Voce possui algum certificado ou diploma?</h2>
-        <p>
-          Se sim, por favor anexe o documento comprovante, deve possuir codigo QR e conter suas
-          informações pessoais e da instituição na qual se formou, além da carga horária.
-        </p>
-        <button>Documento Anexado**</button>
-        <div>
-          <button>Anexar</button>
-          <button>Não possuo</button>
-          <button>Atualizar</button>
-        </div>*/
+
 </style>
