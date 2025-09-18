@@ -313,7 +313,7 @@ window.addEventListener("load", () => {
           <ul>
             <li>
               <div>
-                <input type="text" placeholder="nome da empresa" />
+                <input type="text" placeholder="nome do formado" />
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
             </li>
