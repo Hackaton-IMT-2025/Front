@@ -29,8 +29,87 @@ function irParaHabilidadesNecessarias() {
 function irParaUsuario() {
   paginaAtual.value = 'irParaUsuario'
 }
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("load", () => {
+  gsap.to(".lado-esquerdo", {
+    opacity: 0.3, // diminui a visibilidade do gradiente
+    scrollTrigger: {
+      trigger: ".background",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".lado-direito", {
+    opacity: 0.3,
+    scrollTrigger: {
+      trigger: ".background",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+    },
+  });
+});
+
+
+window.addEventListener("load", () => {
+  gsap.to(".lado-esquerdo2", {
+    opacity: 0.3, // diminui a visibilidade do gradiente
+    scrollTrigger: {
+      trigger: ".background2",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".lado-direito2", {
+    opacity: 0.3,
+    scrollTrigger: {
+      trigger: ".background2",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+    },
+  });
+});
+
+
+window.addEventListener("load", () => {
+  gsap.to(".lado-esquerdo3", {
+    opacity: 0.3, // diminui a visibilidade do gradiente
+    scrollTrigger: {
+      trigger: ".background3",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".lado-direito3", {
+    opacity: 0.3,
+    scrollTrigger: {
+      trigger: ".background3",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+    },
+  });
+});
+
+
+
+
+
+
 </script>
 <template>
+  
   <main class="mainpage">
     <header>
       <nav v-if="
