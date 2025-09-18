@@ -134,7 +134,7 @@ window.addEventListener("load", () => {
       <nav v-else>
         <div>
           <div>
-            <img class="logo2" src="../public/imagens/Logo-Photoroom 1.png" alt="Logo IMT" />
+            <img  @click="irParaHome" class="logo2" src="../public/imagens/Logo-Photoroom 1.png" alt="Logo IMT" />
           </div>
           <div class="search-wrapper">
             <input type="text" placeholder="Buscar" />
