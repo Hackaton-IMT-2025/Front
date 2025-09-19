@@ -2,6 +2,9 @@
 import { ref } from 'vue';
 const paginaAtual = ref("home");
 
+function irParaInicio() {
+  paginaAtual.value = "irParaInicio";
+}
 function irParaLogin() {
   paginaAtual.value = "login";
 }
@@ -21,22 +24,13 @@ function irParaHome() {
   paginaAtual.value = "Home";
 }
 function irParaBusca() {
-  paginaAtual.value = "Busca";
+  paginaAtual.value = "irParaBusca";
 }
 function irParaHabilidadesNecessarias() {
-  paginaAtual.value = "HabilidadesNecessarias";
-}
-function irParaSelecaodecandidatos() {
-  paginaAtual.value = "Selecaodecandidatos";
+  paginaAtual.value = "irParaHabilidadesNecessarias";
 }
 function irParaUsuario() {
-  paginaAtual.value = "Usuario";
-}
-function irParaComunicacaocomcandidatos() {
-  paginaAtual.value = "Comunicacaocomcandidatos";
-}
-function irParaComunicacaocomempresas() {
-  paginaAtual.value = "Comunicacaocomempresas";
+  paginaAtual.value = "irParaUsuario";
 }
 </script>
 <template>
@@ -46,7 +40,7 @@ function irParaComunicacaocomempresas() {
     <div class="lado-direito"></div>
     <main class="mainpage">
 <header>
-  <nav v-if="['home', 'login', 'loginFormado', 'loginEmpresa', 'criarEmpresas', 'criarFormado'].includes(paginaAtual)">
+  <nav v-if="['home', 'login', 'LoginFormado', 'LoginEmpresa', 'criarEmpresas', 'criarFormado'].includes(paginaAtual)">
     <ul>
       <li><img src="../public/imagens/Logo-Photoroom 1.png" alt="Logo IMT" /></li>
       <li><a href="#">Vagas</a></li>
@@ -59,21 +53,21 @@ function irParaComunicacaocomempresas() {
   <nav v-else>
     <ul>
       <li><img src="../public/imagens/Logo-Photoroom 1.png" alt="Logo IMT" /></li>
-      <li><a href="#">Vagas</a></li>
-      <li><a href="#">Empresas</a></li>
+      <li><a href="#">Início</a></li>
+      <li><a @click="irParaBusca" href="#">Vagas</a></li>
+      <li><a @click="irParaBusca" href="#">Empresas</a></li>
       <li>
-        <img src="../public/imagens/flame.png" alt="Avatar" />
+        <img  @click="irParaUsuario" src="../public/imagens/flame.png" alt="Avatar" />
       </li>
     </ul>
     <div class="search-wrapper">
       <input type="text" placeholder="Buscar..." />
-      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button @click="irParaBusca"><img src="../public/imagens/flame6.png" alt=""></button>
     </div>
   </nav>
 </header>
-
     <div v-if="paginaAtual === 'home'">
-    <section class="hero">
+    <section class="hero" v-if="paginaAtual === 'inicio'" id="inicioSection">
       <p>
         Oi, somos o projeto IMT, um site com o proposito de apoiar ao egressados na sua procura no ambito laboral e
         empresas na busqueda de trabalhadores de qualidade, se tua empresa está procurando vacantes ou voce é um
