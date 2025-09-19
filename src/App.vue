@@ -21,22 +21,13 @@ function irParaHome() {
   paginaAtual.value = "Home";
 }
 function irParaBusca() {
-  paginaAtual.value = "Busca";
+  paginaAtual.value = "irParaBusca";
 }
 function irParaHabilidadesNecessarias() {
-  paginaAtual.value = "HabilidadesNecessarias";
-}
-function irParaSelecaodecandidatos() {
-  paginaAtual.value = "Selecaodecandidatos";
+  paginaAtual.value = "irParaHabilidadesNecessarias";
 }
 function irParaUsuario() {
-  paginaAtual.value = "Usuario";
-}
-function irParaComunicacaocomcandidatos() {
-  paginaAtual.value = "Comunicacaocomcandidatos";
-}
-function irParaComunicacaocomempresas() {
-  paginaAtual.value = "Comunicacaocomempresas";
+  paginaAtual.value = "irParaUsuario";
 }
 </script>
 <template>
@@ -62,16 +53,15 @@ function irParaComunicacaocomempresas() {
       <li><a href="#">Vagas</a></li>
       <li><a href="#">Empresas</a></li>
       <li>
-        <img src="../public/imagens/flame.png" alt="Avatar" />
+        <img  @click="irParaUsuario" src="../public/imagens/flame.png" alt="Avatar" />
       </li>
     </ul>
     <div class="search-wrapper">
       <input type="text" placeholder="Buscar..." />
-      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button @click="irParaBusca"><img src="../public/imagens/flame6.png" alt=""></button>
     </div>
   </nav>
 </header>
-
     <div v-if="paginaAtual === 'home'">
     <section class="hero">
       <p>
@@ -236,6 +226,7 @@ Cadastrar
   <img src="../public/imagens/flame.png" alt="flame.png">
   <ul>
     <li>
+
       <div>
       <input type="text" placeholder="email">
       <i class="fa-solid fa-magnifying-glass"></i>
